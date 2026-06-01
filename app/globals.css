@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-base font-normal leading-7 text-zinc-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-extrabold italic text-max-black;
+  }
+}
+
+@layer components {
+  .thm-btn {
+    @apply relative isolate inline-flex items-center gap-2.5 overflow-hidden rounded-full border-2 border-max-base bg-max-base px-8 py-4 text-sm font-medium uppercase tracking-wide text-max-black transition-all duration-500 ease-in-out before:absolute before:bottom-0 before:right-0 before:-z-10 before:h-5 before:w-5 before:translate-x-1/2 before:translate-y-1/2 before:scale-0 before:rounded-full before:bg-max-black before:transition-transform before:duration-500 before:ease-in-out hover:border-max-black hover:text-white hover:shadow-lg hover:before:scale-[35];
+  }
+
+  .thm-btn-outline {
+    @apply relative isolate inline-flex items-center gap-2.5 overflow-hidden rounded-full border-2 border-max-base bg-transparent px-8 py-4 text-sm font-medium uppercase tracking-wide text-max-black transition-all duration-500 ease-in-out before:absolute before:bottom-0 before:right-0 before:-z-10 before:h-5 before:w-5 before:translate-x-1/2 before:translate-y-1/2 before:scale-0 before:rounded-full before:bg-max-base before:transition-transform before:duration-500 before:ease-in-out hover:border-max-base hover:text-max-black hover:shadow-lg hover:before:scale-[35];
+  }
+
+  .section-tagline {
+    @apply inline-flex items-center gap-3 font-subheading text-sm font-semibold uppercase tracking-widest text-max-base;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold leading-tight text-max-black md:text-4xl lg:text-[42px] lg:leading-[1.2];
+  }
+
+  .container-max {
+    @apply mx-auto w-full max-w-container px-4 sm:px-6 lg:px-[15px];
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-style: italic;
+    font-weight: 800;
+  }
+
+  .font-subheading {
+    font-weight: 600;
+  }
+
+  .font-times {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-max-base to-amber-400 bg-clip-text text-transparent;
+  }
+}

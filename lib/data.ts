@@ -1,0 +1,436 @@
+export const navLinks = {
+  pages: [
+    { label: "Services", href: "#services" },
+    { label: "Drivers", href: "#team" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "FAQs", href: "#faq" },
+  ],
+  cars: [
+    { label: "All Cars", href: "/cars" },
+    { label: "Car Listing", href: "/cars" },
+    { label: "Vehicle Details", href: "/cars" },
+  ],
+  blog: [
+    { label: "Blog", href: "#blog" },
+    { label: "Blog Details", href: "#blog" },
+  ],
+} as const;
+
+export const heroSlides = [
+  {
+    id: 1,
+    subtitle: "Your Best",
+    title: "Car",
+    highlight: "Rental",
+    tagline: "Experience",
+    image:
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80",
+  },
+  {
+    id: 2,
+    subtitle: "Your Best",
+    title: "Car",
+    highlight: "Booking",
+    tagline: "Experience",
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80",
+  },
+  {
+    id: 3,
+    subtitle: "Your Best",
+    title: "Car",
+    highlight: "Choosing",
+    tagline: "Experience",
+    image:
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db7?w=1920&q=80",
+  },
+] as const;
+
+export const marqueeItems = [
+  "Premium",
+  "Rates",
+  "Car",
+  "Rental",
+  "Worldwide",
+  "Affordable",
+] as const;
+
+export const services = [
+  {
+    icon: "car",
+    title: "Corporate car rental",
+    description:
+      "Fleet solutions for business travel with flexible contracts and dedicated account support.",
+  },
+  {
+    icon: "taxi",
+    title: "Car rental with driver",
+    description:
+      "Professional chauffeurs for airport transfers, events, and executive transportation.",
+  },
+  {
+    icon: "sport",
+    title: "Airport transfer",
+    description:
+      "On-time pickups and drop-offs with real-time flight tracking and meet-and-greet options.",
+  },
+  {
+    icon: "insurance",
+    title: "Fleet leasing",
+    description:
+      "Long-term leasing packages tailored to your mileage, maintenance, and budget needs.",
+  },
+] as const;
+
+export const processSteps = [
+  {
+    title: "Choose A Car",
+    description:
+      "Browse categories and compare vehicles by price, features, and availability.",
+    image:
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80",
+  },
+  {
+    title: "Come In Contact",
+    description:
+      "Confirm your dates, pickup location, and add-ons with our booking team.",
+    image:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
+  },
+  {
+    title: "Pick-Up Locations",
+    description:
+      "Collect your vehicle at the nearest branch or request doorstep delivery.",
+    image:
+      "https://images.unsplash.com/photo-1620691537282-83d320806644?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Enjoy Driving",
+    description:
+      "Hit the road with full insurance options and 24/7 roadside assistance.",
+    image:
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80",
+  },
+] as const;
+
+export const whyChoose = [
+  {
+    title: "Easy & Fast Booking",
+    description:
+      "Reserve online in minutes with instant confirmation and transparent pricing.",
+  },
+  {
+    title: "Many Pickup Locations",
+    description:
+      "Nationwide branches and partner hubs so you can start your trip nearby.",
+  },
+  {
+    title: "Customer Satisfaction",
+    description:
+      "Rated highly for clean vehicles, friendly staff, and flexible return policies.",
+  },
+] as const;
+
+export const counters = [
+  { value: 1000, suffix: "+", label: "Vehicle fleet", icon: "car" },
+  { value: 10, suffix: "M+", label: "Miles of drive", icon: "mileage" },
+  { value: 15, suffix: "K+", label: "Booking reserved", icon: "range" },
+  { value: 50, suffix: "K+", label: "Pickup & drop", icon: "pin" },
+] as const;
+
+export const carBrands = [
+  "Tesla",
+  "Honda",
+  "Audi",
+  "Mazda",
+  "Toyota",
+  "Acura",
+] as const;
+
+export const cars = [
+  {
+    brand: "Acura",
+    name: "Sport Version",
+    price: 100,
+    transmission: "Manual",
+    mileage: "25 KM",
+    fuel: "Diesel",
+    plan: "Basic",
+    age: "Age 25",
+    seats: "5 Persons",
+    image:
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+  },
+  {
+    brand: "Kia",
+    name: "Urban Cross 2025",
+    price: 100,
+    transmission: "Automatic",
+    mileage: "18 KM",
+    fuel: "Petrol",
+    plan: "Basic",
+    age: "Age 25",
+    seats: "5 Persons",
+    image:
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
+  },
+  {
+    brand: "Audi",
+    name: "A3 Premium 2025",
+    price: 120,
+    transmission: "Automatic",
+    mileage: "22 KM",
+    fuel: "Petrol",
+    plan: "Plus",
+    age: "Age 23",
+    seats: "5 Persons",
+    image:
+      "https://images.unsplash.com/photo-1603386329225-868f9b1ee6f9?w=800&q=80",
+  },
+  {
+    brand: "Ferrari",
+    name: "458 Speciale",
+    price: 450,
+    transmission: "Automatic",
+    mileage: "12 KM",
+    fuel: "Petrol",
+    plan: "Elite",
+    age: "Age 28",
+    seats: "2 Persons",
+    image:
+      "https://images.unsplash.com/photo-1583121274602-3e2830a69836?w=800&q=80",
+  },
+  {
+    brand: "Toyota",
+    name: "Tacoma 4WD",
+    price: 95,
+    transmission: "Manual",
+    mileage: "30 KM",
+    fuel: "Diesel",
+    plan: "Basic",
+    age: "Age 25",
+    seats: "5 Persons",
+    image:
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
+  },
+  {
+    brand: "Honda",
+    name: "Civic Touring",
+    price: 85,
+    transmission: "Automatic",
+    mileage: "20 KM",
+    fuel: "Hybrid",
+    plan: "Basic",
+    age: "Age 25",
+    seats: "5 Persons",
+    image:
+      "https://images.unsplash.com/photo-1590362891996-f771e7472132?w=800&q=80",
+  },
+] as const;
+
+export const pricingPlans = [
+  {
+    name: "Skyline Taxi",
+    price: 10,
+    description:
+      "Ideal for short city trips with predictable rates and quick dispatch.",
+    icon: "taxi",
+    features: [
+      { label: "Initial charge", value: "$06" },
+      { label: "Additional Kilometre", value: "$06" },
+      { label: "Per minute stopped traffic", value: "$06" },
+      { label: "Waiting Charge", value: "$06" },
+    ],
+  },
+  {
+    name: "Urban Cabs",
+    price: 30,
+    description:
+      "Balanced plan for daily commuters with priority booking windows.",
+    icon: "suv",
+    features: [
+      { label: "Initial charge", value: "$08" },
+      { label: "Additional Kilometre", value: "$07" },
+      { label: "Per minute stopped traffic", value: "$05" },
+      { label: "Waiting Charge", value: "$06" },
+    ],
+  },
+  {
+    name: "TurboTaxi",
+    price: 50,
+    description:
+      "Premium tier with luxury vehicles and dedicated customer support.",
+    icon: "jeep",
+    features: [
+      { label: "Initial charge", value: "$12" },
+      { label: "Additional Kilometre", value: "$09" },
+      { label: "Per minute stopped traffic", value: "$06" },
+      { label: "Waiting Charge", value: "$08" },
+    ],
+  },
+] as const;
+
+export const popularCategories = [
+  { name: "Sports Coupe", count: 3, href: "/cars" },
+  { name: "Crossover", count: 5, href: "/cars" },
+  { name: "Pickup", count: 8, href: "/cars" },
+  { name: "Family MPV", count: 6, href: "/cars" },
+  { name: "Sedan", count: 9, href: "/cars" },
+  { name: "Electric", count: 4, href: "/cars" },
+] as const;
+
+export const testimonials = [
+  {
+    name: "Adam Smith",
+    role: "Customer",
+    text: "Smooth booking process and the car was spotless. Pickup took less than ten minutes at the airport branch.",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+  },
+  {
+    name: "Sarah Milne",
+    role: "Customer",
+    text: "Great value for a week-long rental. Staff explained insurance options clearly with no hidden fees.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+  },
+  {
+    name: "Marco Janson",
+    role: "Customer",
+    text: "Used max for a corporate event fleet. Every driver arrived on time and vehicles were premium grade.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+  },
+  {
+    name: "Jessica Brown",
+    role: "Customer",
+    text: "The mobile-friendly checkout made last-minute changes easy. Will book again for our next road trip.",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+  },
+] as const;
+
+export const faqs = [
+  {
+    question: "How old do I need to be to rent a car?",
+    answer:
+      "Drivers must be at least 21 years old. Drivers under 25 may incur a young-driver surcharge depending on vehicle class.",
+  },
+  {
+    question: "What documents do I need to rent a car?",
+    answer:
+      "A valid driver's license, government-issued ID, and a credit or debit card in the renter's name are required at pickup.",
+  },
+  {
+    question: "What types of vehicles are available for rent?",
+    answer:
+      "We offer sedans, SUVs, luxury cars, vans, and electric vehicles. Availability varies by location and season.",
+  },
+  {
+    question: "Can I rent a car with a debit card?",
+    answer:
+      "Yes, at participating locations. A security hold may apply and additional verification steps can be required.",
+  },
+  {
+    question: "What is your fuel policy?",
+    answer:
+      "Most rentals use a full-to-full policy. Return the vehicle with the same fuel level to avoid refueling charges.",
+  },
+] as const;
+
+export const teamMembers = [
+  {
+    name: "Olivia Grace",
+    role: "Sr. Driver",
+    years: "05",
+    thumb:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+  },
+  {
+    name: "Olivia Smith",
+    role: "Premium Driver",
+    years: "08",
+    thumb:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+  },
+  {
+    name: "James Olivia",
+    role: "Jr. Driver",
+    years: "04",
+    thumb:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80",
+  },
+  {
+    name: "Jason Ray",
+    role: "Sr. Driver",
+    years: "07",
+    thumb:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80",
+  },
+  {
+    name: "James Vince",
+    role: "Service Coordinator",
+    years: "03",
+    thumb:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80",
+  },
+] as const;
+
+export const blogPosts = [
+  {
+    title: "Documents required for car rental services",
+    excerpt:
+      "Know which IDs and payment methods to bring for a faster checkout experience.",
+    date: { day: "10", month: "Nov" },
+    tag: "Car Showcase",
+    image:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+  },
+  {
+    title: "Effective car rental blog topics for your fleet",
+    excerpt:
+      "Content ideas that help customers compare plans and choose the right vehicle.",
+    date: { day: "12", month: "Nov" },
+    tag: "Guides",
+    image:
+      "https://images.unsplash.com/photo-148529157115f-77046a4775ea?w=800&q=80",
+  },
+  {
+    title: "Rental cost of sport and luxury cars explained",
+    excerpt:
+      "How daily rates, deposits, and insurance affect premium vehicle pricing.",
+    date: { day: "15", month: "Nov" },
+    tag: "Pricing",
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+  },
+] as const;
+
+export const galleryImages = [
+  "https://images.unsplash.com/photo-1494976388531-d1058498bdd8?w=600&q=80",
+  "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80",
+  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80",
+  "https://images.unsplash.com/photo-1619767886555-ef6afc3f097f?w=600&q=80",
+  "https://images.unsplash.com/photo-1616422285623-13f39b62d166?w=600&q=80",
+  "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80",
+] as const;
+
+export const brandLogos = [
+  "Toyota",
+  "BMW",
+  "Audi",
+  "Ford",
+  "Honda",
+  "Mercedes",
+] as const;
