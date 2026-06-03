@@ -22,14 +22,59 @@ export default function BookingPage() {
     type: "idle",
     message: "",
   });
+  const [errors, setErrors] = useState<Partial<Record<keyof typeof formData, string>>>({});
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [bookingSummary, setBookingSummary] = useState<typeof formData | null>(null);
+
+  const today = new Date();
+  const minDate = today.toISOString().split("T")[0];
+  const timeOptions = Array.from({ length: 36 }, (_, index) => {
+    const minutes = 30 * index;
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    const value = `${String(hours + 6).padStart(2, "0")}:${String(mins).padStart(2, "0")}`;
+    return value;
+  }).slice(0, 36);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
+  const validateForm = () => {
+    const newErrors: Partial<Record<keyof typeof formData, string>> = {};
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!phoneDigits) {
+      newErrors.phone = "Phone number is required.";
+    } else if (phoneDigits.length !== 10) {
+      newErrors.phone = "Enter a valid 10-digit mobile number without country code.";
+    }
+    if (!formData.pickup) newErrors.pickup = "Please select a pickup location.";
+    if (!formData.dropoff) newErrors.dropoff = "Please select a dropoff location.";
+    if (formData.pickup && formData.dropoff && formData.pickup === formData.dropoff) {
+      newErrors.dropoff = "Pickup and dropoff cannot be the same.";
+    }
+    if (!formData.carType) newErrors.carType = "Choose a car type.";
+    if (!formData.date) {
+      newErrors.date = "Select a date.";
+    } else if (formData.date < minDate) {
+      newErrors.date = "Please choose today or a future date.";
+    }
+    if (!formData.time) newErrors.time = "Select a time.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) {
+      setStatus({ type: "error", message: "Please fix the highlighted fields before booking." });
+      return;
+    }
     setStatus({ type: "loading", message: "Processing your booking..." });
 
     try {
@@ -44,6 +89,8 @@ export default function BookingPage() {
       const data = await response.json();
 
       if (response.ok) {
+        setBookingSummary({ ...formData });
+        setShowSuccessModal(true);
         setStatus({ type: "success", message: "✓ Booking confirmed! We've sent you details on WhatsApp." });
         setFormData({ name: "", phone: "", pickup: "", dropoff: "", carType: "", date: "", time: "", notes: "" });
         setTimeout(() => setStatus({ type: "idle", message: "" }), 4000);
@@ -140,11 +187,12 @@ export default function BookingPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  placeholder="+91 XXXXXXXXXX"
+                  placeholder="Enter 10-digit mobile number"
                   required
                   disabled={status.type === "loading"}
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all placeholder:text-gray-400 disabled:opacity-50"
+                  className={`w-full rounded-xl border px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all placeholder:text-gray-400 disabled:opacity-50 ${errors.phone ? "border-red-500 ring-red-100" : "border-gray-300"}`}
                 />
+                {errors.phone && <p className="mt-2 text-xs text-red-600">{errors.phone}</p>}
               </div>
 
               {/* Pickup */}
@@ -158,13 +206,14 @@ export default function BookingPage() {
                   onChange={handleInputChange}
                   required
                   disabled={status.type === "loading"}
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50"
+                  className={`w-full rounded-xl border px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50 ${errors.pickup ? "border-red-500 ring-red-100" : "border-gray-300"}`}
                 >
                   <option value="">Select pickup location</option>
                   {locations.map((l) => (
                     <option key={l} value={l}>{l}</option>
                   ))}
                 </select>
+                {errors.pickup && <p className="mt-2 text-xs text-red-600">{errors.pickup}</p>}
               </div>
 
               {/* Dropoff */}
@@ -185,6 +234,7 @@ export default function BookingPage() {
                     <option key={l} value={l}>{l}</option>
                   ))}
                 </select>
+                {errors.dropoff && <p className="mt-2 text-xs text-red-600">{errors.dropoff}</p>}
               </div>
 
               {/* Car Type */}
@@ -198,13 +248,14 @@ export default function BookingPage() {
                   onChange={handleInputChange}
                   required
                   disabled={status.type === "loading"}
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50"
+                  className={`w-full rounded-xl border px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50 ${errors.carType ? "border-red-500 ring-red-100" : "border-gray-300"}`}
                 >
                   <option value="">Select car type</option>
                   {carTypes.map((t) => (
                     <option key={t} value={t}>{t}</option>
                   ))}
                 </select>
+                {errors.carType && <p className="mt-2 text-xs text-red-600">{errors.carType}</p>}
               </div>
 
               {/* Date & Time */}
@@ -216,24 +267,32 @@ export default function BookingPage() {
                     name="date"
                     value={formData.date}
                     onChange={handleInputChange}
+                    min={minDate}
                     required
                     disabled={status.type === "loading"}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50"
+                    className={`w-full rounded-xl border px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50 ${errors.date ? "border-red-500 ring-red-100" : "border-gray-300"}`}
                   />
+                  {errors.date && <p className="mt-2 text-xs text-red-600">{errors.date}</p>}
                 </div>
                 <div>
                   <label className="flex items-center gap-1.5 text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
                     <Clock className="w-4 h-4 text-gray-500" /> Time
                   </label>
-                  <input
-                    type="time"
+                  <select
                     name="time"
                     value={formData.time}
                     onChange={handleInputChange}
                     required
                     disabled={status.type === "loading"}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50"
-                  />
+                    className={`w-full rounded-xl border px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all bg-white disabled:opacity-50 ${errors.time ? "border-red-500 ring-red-100" : "border-gray-300"}`}
+                    style={{ maxHeight: "220px" }}
+                  >
+                    <option value="">Select pickup time</option>
+                    {timeOptions.map((time) => (
+                      <option key={time} value={time}>{time}</option>
+                    ))}
+                  </select>
+                  {errors.time && <p className="mt-2 text-xs text-red-600">{errors.time}</p>}
                 </div>
               </div>
 
@@ -270,6 +329,85 @@ export default function BookingPage() {
                 )}
               </button>
             </form>
+
+            {showSuccessModal && bookingSummary && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                <div className="w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl ring-1 ring-black/5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.35em] text-red-600 font-semibold">Booking Complete</p>
+                      <h3 className="mt-3 text-3xl font-bold text-gray-900">Your car is reserved</h3>
+                      <p className="mt-2 text-gray-600 text-sm">We have received your request and sent booking confirmation details to our team.</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowSuccessModal(false)}
+                      className="text-gray-400 hover:text-gray-700"
+                      aria-label="Close confirmation popup"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  <div className="mt-6 rounded-3xl border border-gray-200 bg-gray-50 p-5">
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Name</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.name}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Phone</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.phone}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Route</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.pickup} → {bookingSummary.dropoff}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Car</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.carType}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Date</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.date}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Time</p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">{bookingSummary.time}</p>
+                      </div>
+                    </div>
+                    {bookingSummary.notes && (
+                      <div className="mt-4 rounded-2xl bg-white p-4">
+                        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Notes</p>
+                        <p className="mt-1 text-sm text-gray-700">{bookingSummary.notes}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                    <button
+                      type="button"
+                      onClick={() => setShowSuccessModal(false)}
+                      className="w-full rounded-2xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 sm:w-auto"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowSuccessModal(false);
+                        setBookingSummary(null);
+                        setFormData({ name: "", phone: "", pickup: "", dropoff: "", carType: "", date: "", time: "", notes: "" });
+                        setStatus({ type: "idle", message: "" });
+                      }}
+                      className="w-full rounded-2xl bg-red-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-700 sm:w-auto"
+                    >
+                      Book Another
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none overflow-hidden z-0">

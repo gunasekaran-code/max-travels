@@ -27,6 +27,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const phoneDigits = body.phone.replace(/\D/g, "");
+    if (phoneDigits.length !== 10) {
+      return NextResponse.json({ error: "Phone number must be a 10-digit mobile number without country code." }, { status: 400 });
+    }
+
+    if (body.pickup === body.dropoff) {
+      return NextResponse.json({ error: "Pickup and dropoff cannot be the same location." }, { status: 400 });
+    }
+
+    const today = new Date().toISOString().split("T")[0];
+    if (body.date < today) {
+      return NextResponse.json({ error: "Booking date must be today or later." }, { status: 400 });
+    }
+
     // Get WhatsApp credentials from environment
     const phoneNumberId = process.env.WHATSAPP_PHONE_NUMBER_ID;
     const accessToken   = process.env.WHATSAPP_ACCESS_TOKEN;
