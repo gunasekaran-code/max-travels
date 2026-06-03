@@ -13,5 +13,5 @@ export const CONTACT = {
   email: "maxtravelstamilnadu@gmail.com",
   address: "73 E/15,Polpettai East, Thoothukudi, Tamil Nadu",
   emergency: "+91 (95661) 88126",
-  rating: "4.9 Rated ⭐️",
+  rating: "5.0 Rated ⭐️",
 } as const;

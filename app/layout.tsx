@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
+import Chatbot from "@/components/chatbot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className="min-h-screen overflow-x-hidden">
         <SiteShell>{children}</SiteShell>
+        <Chatbot />
       </body>
     </html>
   );

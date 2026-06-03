@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, X } from "lucide-react";
+import { Bot, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
@@ -15,7 +15,7 @@ export function ChatWidget() {
         className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-max-base text-max-black shadow-lg transition hover:scale-105"
         aria-label="Open chat"
       >
-        <MessageCircle className="h-6 w-6" />
+        <Bot className="h-6 w-6" />
       </button>
       {open && (
         <div className="fixed bottom-24 right-6 z-50 w-[min(100vw-2rem,380px)] rounded-2xl bg-white p-6 shadow-2xl">

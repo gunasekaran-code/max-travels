@@ -141,7 +141,7 @@ export function Footer() {
                         <Compass className="h-4 w-4 animate-spin-slow" />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-xs font-semibold text-white uppercase tracking-wider">Trending Hub</p>
+                        <p className="text-xs font-semibold text-white uppercase tracking-wider">Max Travels</p>
                         <p className="font-times text-[11px] text-white/60 truncate max-w-[180px]">
                           {CONTACT.address}
                         </p>
