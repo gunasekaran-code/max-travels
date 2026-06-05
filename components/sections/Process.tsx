@@ -26,7 +26,7 @@ export function Process() {
                   <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-max-base font-display text-lg font-bold text-max-black">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-xl font-semibold">{step.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-white">{step.title}</h3>
                   <p className="mt-2 text-sm text-white/80">{step.description}</p>
                 </div>
               </div>

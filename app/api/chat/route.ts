@@ -1,38 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 
-// Remove unused 'project' variable — was causing no-unused-vars warning
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY!,
 });
-
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const messages: Message[] = body.messages ?? [];
+    const messages = body.messages ?? [];
 
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1024,
-      messages,
+    const formattedContents = messages.map((msg: any) => ({
+      role: msg.role === "user" ? "user" : "model",
+      parts: [{ text: msg.content }],
+    }));
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: formattedContents,
+      config: {
+        systemInstruction: "You are a helpful assistant for Max Travels — car bookings and travel info. Speak concisely and politely. Start the first interaction with: 'Hi, I'm Ava 👋 — I can help with car searches, bookings, and travel info. How can I help you today?'",
+      }
     });
 
-    // Fixed: replaced 'any' with the correct SDK type
-    const textBlock = response.content.find(
-      (block): block is Anthropic.TextBlock => block.type === "text"
-    );
-
-    return NextResponse.json({
-      message: textBlock?.text ?? "",
+    // Return plain text instead of JSON
+    return new Response(response.text, {
+      status: 200,
+      headers: { "Content-Type": "text/plain" },
     });
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("Chat API error:", message);
-    return NextResponse.json({ error: message }, { status: 500 });
+
+  } catch (error) {
+    console.error("Gemini API Error:", error);
+
+    // Keep error as JSON or change to plain text depending on your frontend error handling
+    return new Response("Failed to generate response", { 
+      status: 500,
+      headers: { "Content-Type": "text/plain" }
+    });
   }
 }

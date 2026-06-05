@@ -13,33 +13,39 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-28">
       <div className="container-max">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <SectionTitle
-              align="left"
-              tagline="Our Faqs"
-              title="Frequently Asked Questions"
-              className="mb-8"
+        
+        {/* 1. Title moved outside the grid so it sits cleanly on top */}
+        <SectionTitle
+          align="left"
+          tagline="Our Faqs"
+          title="Frequently Asked Questions"
+          className="mb-12"
+        />
+
+        {/* 2. The grid now only handles the Image and the FAQ items */}
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
+          
+          {/* Left Column: Image Only */}
+          <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-max">
+            <Image
+              src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=80"
+              alt="Customer support"
+              fill
+              className="object-cover"
             />
-            <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-max">
-              <Image
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=80"
-                alt="Customer support"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute bottom-6 left-6 rounded-2xl bg-max-base px-6 py-4 text-center">
-                <div className="font-display text-4xl font-bold text-max-black">
-                  55
-                </div>
-                <p className="text-xs font-medium uppercase">
-                  Years of
-                  <br />
-                  experience
-                </p>
+            <div className="absolute bottom-6 left-6 rounded-2xl bg-max-base px-6 py-4 text-center">
+              <div className="font-display text-4xl font-bold text-max-black">
+                55
               </div>
+              <p className="text-xs font-medium uppercase">
+                Years of
+                <br />
+                experience
+              </p>
             </div>
           </div>
+
+          {/* Right Column: FAQ Items (Now perfectly aligned with the top of the image) */}
           <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
@@ -79,6 +85,7 @@ export function FAQ() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

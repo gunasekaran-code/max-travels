@@ -9,7 +9,7 @@ export function CallBanner() {
       <div className="container-max">
         <div className="relative overflow-hidden rounded-max">
           <Image
-            src="https://images.unsplash.com/photo-148529157115f-77046a4775ea?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1755083754967-3edea1c4803b?q=80&w=2124&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
             fill
             className="object-cover"
@@ -20,7 +20,7 @@ export function CallBanner() {
               <p className="text-sm uppercase tracking-widest text-max-base">
                 Available 24/7
               </p>
-              <h2 className="mt-2 font-display text-2xl font-bold md:text-3xl">
+              <h2 className="mt-2 font-display text-2xl font-bold md:text-3xl text-white">
                 Call Any Time For Booking
               </h2>
             </div>

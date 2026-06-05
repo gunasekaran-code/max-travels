@@ -7,8 +7,8 @@ import { Footer } from "./Footer";
 import { Sidebar } from "./Sidebar";
 import { MobileNav } from "./MobileNav";
 import { SearchPopup } from "./SearchPopup";
-import { ChatWidget } from "./ChatWidget";
-import { ScrollToTop } from "./ScrollToTop";
+// import { ChatWidget } from "./ChatWidget";
+// import { ScrollToTop } from "./ScrollToTop";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -29,8 +29,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
       <SearchPopup open={searchOpen} onClose={() => setSearchOpen(false)} />
-      <ChatWidget />
-      <ScrollToTop />
+      {/* <ChatWidget /> */}
+      {/* <ScrollToTop /> */}
     </>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
-import { Bot } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Chatbot() {
@@ -14,13 +13,11 @@ export default function Chatbot() {
   const [loading, setLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Auto-open after 10 seconds
   useEffect(() => {
     const t = setTimeout(() => setOpen(true), 10000);
     return () => clearTimeout(t);
   }, []);
 
-  // Scroll to bottom when messages change
   useEffect(() => {
     const el = containerRef.current;
     if (el) el.scrollTop = el.scrollHeight;
@@ -51,7 +48,6 @@ export default function Chatbot() {
 
       if (contentType.includes("application/json")) {
         const data = await res.json();
-        // Try common fields
         assistantText = data.output?.[0]?.content?.[0]?.text || data.result || JSON.stringify(data);
       } else {
         assistantText = await res.text();
@@ -67,20 +63,41 @@ export default function Chatbot() {
 
   return (
     <>
+      {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 overflow-hidden group transition-all duration-300 hover:scale-105"
+        style={{ border: "2px solid #FFB51D", boxShadow: "0 0 20px rgba(255,181,29,0.45)" }}
         aria-label="Toggle chat"
       >
-        <Bot className="h-6 w-6" />
+        <Image
+          src="https://as2.ftcdn.net/v2/jpg/06/43/68/65/1000_F_643686558_Efl6HB1ITw98bx1PdAd1wy56QpUTMh47.webp"
+          alt="Ava Chatbot"
+          width={56}
+          height={56}
+          className="h-full w-full object-cover group-hover:scale-10 transition-transform duration-300"
+        />
       </button>
 
       {open && (
         <div className="fixed bottom-20 right-5 w-96 h-[520px] bg-white shadow-xl rounded-xl overflow-hidden flex flex-col">
-          <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-red-600 to-rose-500 text-white">
-            <div className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center">
-              {/* Simple female avatar initials */}
-              <span className="text-sm">Ava</span>
+
+          {/* Header */}
+          <div
+            className="flex items-center gap-3 p-4 text-white"
+            style={{ background: "linear-gradient(to right, #ffaa00, #ffc445)" }}
+          >
+            <div
+              className="h-12 w-12 rounded-full flex items-center justify-center text-sm font-semibold"
+              style={{ background: "rgba(0,0,0,0.15)", color: "#fff" }}
+            >
+              <Image
+                src="https://as2.ftcdn.net/v2/jpg/06/43/68/65/1000_F_643686558_Efl6HB1ITw98bx1PdAd1wy56QpUTMh47.webp"
+                alt="Ava Chatbot"
+                width={56}
+                height={56}
+                className="h-full w-full object-cover group-hover:scale-10 transition-transform duration-300"
+              />
             </div>
             <div>
               <div className="font-semibold">Ava — Max Travels</div>
@@ -88,17 +105,28 @@ export default function Chatbot() {
             </div>
           </div>
 
+          {/* Messages */}
           <div ref={containerRef} className="p-4 flex-1 overflow-auto bg-gray-50">
-            {messages.map((m, i) => (
-              <div key={i} className={`mb-3 flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div className={`${m.role === "user" ? "bg-red-600 text-white" : "bg-white text-gray-900"} rounded-lg p-3 shadow-sm max-w-[78%]`}>
-                  <div className="text-sm">{m.content}</div>
+            {messages
+              .filter((m) => m.role !== "system")
+              .map((m, i) => (
+                <div key={i} className={`mb-3 flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className="rounded-lg p-3 shadow-sm max-w-[78%] text-sm"
+                    style={
+                      m.role === "user"
+                        ? { backgroundColor: "#FFB51D", color: "#1a1a1a" }
+                        : { backgroundColor: "#fff", color: "#111827" }
+                    }
+                  >
+                    {m.content}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             {loading && <div className="text-sm text-gray-500">Ava is typing...</div>}
           </div>
 
+          {/* Input */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -110,9 +138,14 @@ export default function Chatbot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about cars, availability, or booking..."
-              className="flex-1 rounded-md border px-3 py-2 text-sm"
+              className="flex-1 rounded-md border px-3 py-2 text-sm outline-none"
+              style={{ borderColor: "#FFB51D" }}
             />
-            <button type="submit" className="rounded-md bg-red-600 px-4 py-2 text-white text-sm">
+            <button
+              type="submit"
+              className="rounded-md px-4 py-2 text-sm font-medium"
+              style={{ backgroundColor: "#FFB51D", color: "#1a1a1a" }}
+            >
               Send
             </button>
           </form>

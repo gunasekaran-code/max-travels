@@ -9,10 +9,16 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.carrentalplace.com',
+        hostname: 'as2.ftcdn.net',
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.carrentalplace.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };

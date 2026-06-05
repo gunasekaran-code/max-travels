@@ -12,7 +12,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { LetsTalk } from "@/components/sections/LetsTalk";
 import { Team } from "@/components/sections/Team";
-import { DownloadApp } from "@/components/sections/DownloadApp";
 import { Brands } from "@/components/sections/Brands";
 import { Blog } from "@/components/sections/Blog";
 import { Gallery } from "@/components/sections/Gallery";
@@ -34,7 +33,6 @@ export default function HomePage() {
       <FAQ />
       <LetsTalk />
       <Team />
-      <DownloadApp />
       <Brands />
       <Blog />
       <Gallery />

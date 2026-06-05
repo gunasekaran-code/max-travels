@@ -16,7 +16,7 @@ export function LetsTalk() {
           <p className="text-sm uppercase tracking-widest text-max-base">
             Rent Your Car
           </p>
-          <h2 className="mt-2 font-display text-3xl font-bold md:text-4xl">
+          <h2 className="mt-2 font-display text-3xl font-bold md:text-4xl text-white">
             Interested in Renting?
           </h2>
         </div>

@@ -37,7 +37,7 @@ export function PopularCars() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-max-base/20 text-max-base">
                   <Icon className="h-8 w-8" />
                 </div>
-                <h4 className="font-display text-lg font-semibold">{cat.name}</h4>
+                <h4 className="font-display text-lg font-semibold text-white">{cat.name}</h4>
                 <p className="mt-2 text-sm text-white/60">{cat.count} Cars</p>
               </a>
             );

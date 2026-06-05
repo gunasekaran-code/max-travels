@@ -337,6 +337,11 @@ export const faqs = [
     answer:
       "Most rentals use a full-to-full policy. Return the vehicle with the same fuel level to avoid refueling charges.",
   },
+  {
+    question: "Can I return the rental car to a different location?",
+    answer:
+      "Yes, one-way rentals are available between select stations. A one-way drop-off fee may apply depending on your destination.",
+  },
 ] as const;
 
 export const teamMembers = [

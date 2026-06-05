@@ -13,7 +13,7 @@ export function VideoCTA() {
       />
       <div className="absolute inset-0 bg-max-black/70" />
       <div className="container-max relative text-center text-white">
-        <h2 className="font-display text-3xl font-bold md:text-4xl lg:text-5xl">
+        <h2 className="font-display text-3xl font-bold md:text-4xl lg:text-5xl text-white">
           Want To Know More About? <br />
           Play Our Promotional Video Now!
         </h2>

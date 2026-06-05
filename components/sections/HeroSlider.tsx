@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import BlurText from "@/components/BlurText";
 import { cn } from "@/lib/utils";
 
 export function HeroSlider() {
@@ -59,13 +60,16 @@ export function HeroSlider() {
                       <p className="mb-3 font-subheading text-sm font-bold uppercase tracking-[0.2em] text-max-base">
                         {slide.subtitle}
                       </p>
-                      <h1 className="font-display text-4xl font-black leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                        {slide.title}{" "}
-                        <span className="text-max-base">{slide.highlight}</span>
-                        <span className="mt-2 block font-subheading text-2xl font-semibold text-white md:text-4xl">
-                          {slide.tagline}
-                        </span>
-                      </h1>
+                      <BlurText
+                        text={`${slide.title} ${slide.highlight}`}
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                        className="font-display text-4xl font-black leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                      />
+                      <span className="mt-2 block font-subheading text-2xl font-semibold text-white md:text-4xl">
+                        {slide.tagline}
+                      </span>
                     </div>
 
                     {/* Bottom Section: Action CTAs */}
