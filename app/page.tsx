@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSlider } from "@/components/sections/HeroSlider";
 import { SlidingText } from "@/components/sections/SlidingText";
 import { Services } from "@/components/sections/Services";
@@ -15,6 +16,42 @@ import { Team } from "@/components/sections/Team";
 import { Brands } from "@/components/sections/Brands";
 import { Blog } from "@/components/sections/Blog";
 import { Gallery } from "@/components/sections/Gallery";
+import { SITE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Premium Car Rental Services | Max Travels",
+  description:
+    "Book luxury and premium cars for any occasion. Airport transfers, self-drive rentals, and chauffeur services with Max Travels. Best rates guaranteed.",
+  keywords: [
+    "car rental",
+    "luxury cars",
+    "airport transfer",
+    "self-drive",
+    "chauffeur",
+    "premium car rental",
+    "vehicle booking",
+  ],
+  openGraph: {
+    title: "Premium Car Rental Services | Max Travels",
+    description:
+      "Book luxury and premium cars for any occasion. Airport transfers, self-drive rentals, and chauffeur services.",
+    type: "website",
+    locale: "en_US",
+    url: SITE.url,
+    siteName: SITE.name,
+    images: [
+      {
+        url: `${SITE.url}/max-travels-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "Max Travels - Premium Car Rental",
+      },
+    ],
+  },
+  alternates: {
+    canonical: SITE.url,
+  },
+};
 
 export default function HomePage() {
   return (

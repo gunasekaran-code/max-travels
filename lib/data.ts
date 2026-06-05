@@ -148,86 +148,189 @@ export const carBrands = [
   "Acura",
 ] as const;
 
-export const cars = [
+export type CarType = "Sedan" | "SUV" | "Tempo Van";
+
+export interface Car {
+  brand: string;
+  name: string;
+  /** Offer / base price (what you charge) */
+  price: number;
+  /** Original / MRP shown crossed-out */
+  originalPrice: number;
+  hours: string;
+  km: number;
+  extraPerKm: number;
+  transmission: string;
+  fuel: string;
+  seats: string;
+  type: CarType;
+  /** Only for Tempo Van */
+  ac?: boolean;
+  image: string;
+}
+
+export const carTypes: CarType[] = ["Sedan", "SUV", "Tempo Van"];
+
+export const cars: Car[] = [
+  // ── Sedan ──────────────────────────────────────────────
   {
-    brand: "Acura",
-    name: "Sport Version",
-    price: 100,
+    brand: "Maruti",
+    name: "Swift Dzire",
+    price: 2500,
+    originalPrice: 2700,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
     transmission: "Manual",
-    mileage: "25 KM",
-    fuel: "Diesel",
-    plan: "Basic",
-    age: "Age 25",
+    fuel: "Petrol",
     seats: "5 Persons",
+    type: "Sedan",
     image:
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+      "https://www.autovista.in/assets/img/new_cars_colour_variants/swift-colour-solid-fire-red.jpg",
   },
   {
-    brand: "Kia",
-    name: "Urban Cross 2025",
-    price: 100,
-    transmission: "Automatic",
-    mileage: "18 KM",
+    brand: "Hyundai",
+    name: "Hyundai Aura",
+    price: 2800,
+    originalPrice: 3050,   // +250
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
+    transmission: "Manual",
     fuel: "Petrol",
-    plan: "Basic",
-    age: "Age 25",
     seats: "5 Persons",
+    type: "Sedan",
     image:
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
-  },
-  {
-    brand: "Audi",
-    name: "A3 Premium 2025",
-    price: 120,
-    transmission: "Automatic",
-    mileage: "22 KM",
-    fuel: "Petrol",
-    plan: "Plus",
-    age: "Age 23",
-    seats: "5 Persons",
-    image:
-      "https://images.unsplash.com/photo-1603386329225-868f9b1ee6f9?w=800&q=80",
-  },
-  {
-    brand: "Ferrari",
-    name: "458 Speciale",
-    price: 450,
-    transmission: "Automatic",
-    mileage: "12 KM",
-    fuel: "Petrol",
-    plan: "Elite",
-    age: "Age 28",
-    seats: "2 Persons",
-    image:
-      "https://images.unsplash.com/photo-1583121274602-3e2830a69836?w=800&q=80",
+      "https://cdn-s3.autocarindia.com/legacy/cdni/Galleries/20251209090956_Hyundai_Aura_Titan_Grey.jpg",
   },
   {
     brand: "Toyota",
-    name: "Tacoma 4WD",
-    price: 95,
+    name: "Toyota Etios",
+    price: 2500,
+    originalPrice: 2700,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
     transmission: "Manual",
-    mileage: "30 KM",
-    fuel: "Diesel",
-    plan: "Basic",
-    age: "Age 25",
+    fuel: "Petrol",
     seats: "5 Persons",
+    type: "Sedan",
     image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
+      "https://w0.peakpx.com/wallpaper/89/425/HD-wallpaper-toyota-etios-studio-2018-cars-compact-cars-2018-toyota-etios-japanese-cars-toyota.jpg",
+  },
+
+  // ── SUV ────────────────────────────────────────────────
+  {
+    brand: "Toyota",
+    name: "Innova Crysta",
+    price: 4500,
+    originalPrice: 4750,   // +250
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
+    transmission: "Automatic",
+    fuel: "Diesel",
+    seats: "7 Persons",
+    type: "SUV",
+    image:
+      "https://imgd.aeplcdn.com/600x600/n/cw/ec/145675/toyota-innova-crysta-left-front-three-quarter0.jpeg?isig=0&wm=0",
   },
   {
-    brand: "Honda",
-    name: "Civic Touring",
-    price: 85,
-    transmission: "Automatic",
-    mileage: "20 KM",
-    fuel: "Hybrid",
-    plan: "Basic",
-    age: "Age 25",
-    seats: "5 Persons",
+    brand: "Toyota",
+    name: "Innova",
+    price: 4000,
+    originalPrice: 4200,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
+    transmission: "Manual",
+    fuel: "Diesel",
+    seats: "7 Persons",
+    type: "SUV",
     image:
-      "https://images.unsplash.com/photo-1590362891996-f771e7472132?w=800&q=80",
+      "https://i.pinimg.com/1200x/3a/1f/cb/3a1fcb1a65e2d38a9a34fbb76cec1e39.jpg",
   },
-] as const;
+  {
+    brand: "Kia",
+    name: "Carens",
+    price: 3500,
+    originalPrice: 3700,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
+    transmission: "Automatic",
+    fuel: "Petrol",
+    seats: "7 Persons",
+    type: "SUV",
+    image:
+      "https://cdn-s3.autocarindia.com/legacy/cdni/mmv_images/colors/20250808114708_Kia_Carens_Clear_White%5B1%5D.png?w=640&q=75",
+  },
+  {
+    brand: "Maruti",
+    name: "Ertiga",
+    price: 3800,
+    originalPrice: 3950,   // +150
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 13,
+    transmission: "Manual",
+    fuel: "Petrol",
+    seats: "7 Persons",
+    type: "SUV",
+    image:
+      "https://i.pinimg.com/736x/89/32/c0/8932c0e6bacc17f73c4d64aa6aa4ff5b.jpg",
+  },
+
+  // ── Tempo Van ──────────────────────────────────────────
+  {
+    brand: "Force",
+    name: "Tempo Traveller (AC)",
+    price: 6000,
+    originalPrice: 6200,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 25,
+    transmission: "Manual",
+    fuel: "Diesel",
+    seats: "12 Persons",
+    type: "Tempo Van",
+    ac: true,
+    image:
+      "https://i.pinimg.com/1200x/dc/c4/e9/dcc4e96b05c9c26ff5908091e36a0d37.jpg",
+  },
+  {
+    brand: "Urbania",
+    name: "Urbania Traveller (AC)",
+    price: 6700,
+    originalPrice: 8500,
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 25,
+    transmission: "Manual",
+    fuel: "Diesel",
+    seats: "12 Persons",
+    type: "Tempo Van",
+    ac: true,
+    image:
+      "https://i.pinimg.com/736x/4f/3c/f3/4f3cf34f67ad49f71162c21527591907.jpg",
+  },
+  {
+    brand: "Force",
+    name: "Tempo Traveller (Non-AC)",
+    price: 5500,
+    originalPrice: 5700,   // +200
+    hours: "12 hr",
+    km: 80,
+    extraPerKm: 25,
+    transmission: "Manual",
+    fuel: "Diesel",
+    seats: "12 Persons",
+    type: "Tempo Van",
+    ac: false,
+    image:
+      "https://i.pinimg.com/1200x/dc/c4/e9/dcc4e96b05c9c26ff5908091e36a0d37.jpg",
+  },
+];
 
 export const pricingPlans = [
   {
@@ -336,11 +439,6 @@ export const faqs = [
     question: "What is your fuel policy?",
     answer:
       "Most rentals use a full-to-full policy. Return the vehicle with the same fuel level to avoid refueling charges.",
-  },
-  {
-    question: "Can I return the rental car to a different location?",
-    answer:
-      "Yes, one-way rentals are available between select stations. A one-way drop-off fee may apply depending on your destination.",
   },
 ] as const;
 

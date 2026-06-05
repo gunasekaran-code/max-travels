@@ -26,8 +26,24 @@ export const metadata: Metadata = {
     "airport transfer",
     "fleet leasing",
     "premium cars",
+    "luxury car rental",
+    "self-drive cars",
+    "chauffeur service",
   ],
   authors: [{ name: SITE.name }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/max-travels-logo-cropped.png",
     shortcut: "/max-travels-logo-cropped.png",
@@ -54,10 +70,10 @@ export const metadata: Metadata = {
     title: SITE.title,
     description: SITE.description,
     images: ["/max-travels-logo.png"],
+    creator: "@MaxTravels",
   },
-  robots: {
-    index: true,
-    follow: true,
+  alternates: {
+    canonical: SITE.url,
   },
 };
 
@@ -65,6 +81,9 @@ export const viewport: Viewport = {
   themeColor: "#FFB51D",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  minimumScale: 1,
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -74,7 +93,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="min-h-screen overflow-x-hidden">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="x-ua-compatible" content="IE=edge" />
+        <link rel="canonical" href={SITE.url} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: SITE.name,
+              url: SITE.url,
+              logo: `${SITE.url}/max-travels-logo.png`,
+              description: SITE.description,
+              sameAs: [
+                "https://www.facebook.com/maxtravel",
+                "https://www.instagram.com/maxtravel",
+                "https://www.twitter.com/maxtravel",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Customer Service",
+                availableLanguage: "en",
+              },
+            }),
+          }}
+        />
+      </head>
+      <body className="min-h-screen overflow-x-hidden antialiased">
         <SiteShell>{children}</SiteShell>
         <Chatbot />
       </body>

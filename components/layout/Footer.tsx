@@ -42,7 +42,7 @@ export function Footer() {
             <div className="lg:col-span-4">
               <Link href="/" className="flex items-center gap-2 font-display text-2xl font-bold text-white">
                 <Image
-                  src="/max-travels-logo-cropped.png"
+                  src="/logo.png"
                   alt=""
                   width={80}
                   height={80}

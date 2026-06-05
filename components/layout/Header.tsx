@@ -94,7 +94,7 @@ export function Header({
         <div className="container-max flex items-center justify-between gap-4 py-4 lg:py-5">
           <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="max home">
             <Image
-              src="/max-travels-logo-cropped.png"
+              src="/logo.png"
               alt=""
               width={72}
               height={72}

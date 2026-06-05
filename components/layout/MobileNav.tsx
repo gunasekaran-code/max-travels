@@ -42,7 +42,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-2 font-display text-xl font-bold">
             <Image
-              src="/max-travels-logo-cropped.png"
+              src="/logo.png"
               alt=""
               width={56}
               height={56}

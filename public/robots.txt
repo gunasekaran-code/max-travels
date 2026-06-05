@@ -1,0 +1,61 @@
+# Max Travels - Robots Configuration
+
+# Default rule for all user agents
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /cars
+Allow: /booking
+Allow: /contact
+Allow: /services
+
+# Disallow private/admin areas
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /private
+Disallow: /api/internal
+
+# Disallow crawling of common sensitive paths
+Disallow: /*.json
+Disallow: /.env
+Disallow: /.git
+Disallow: /node_modules
+
+# Allow API endpoints that should be crawled
+Allow: /api/public
+
+# Specify crawl delay (time in seconds)
+Crawl-delay: 1
+
+# Specify sitemap
+Sitemap: https://maxtravel.com/sitemap.xml
+Sitemap: https://maxtravel.com/sitemap-pages.xml
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Disallow AI/Bot crawlers (optional)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Block other bots if needed
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
