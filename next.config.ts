@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'as2.ftcdn.net',
+        hostname: 'creator.nightcafe.studio',
         port: '',
         pathname: '/**',
       },
@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
         hostname: 'dn-s3.autocarindia.com',
         port: '',
         pathname: '/**',
-      }
+      },
       
     ],
   },

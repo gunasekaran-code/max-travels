@@ -165,8 +165,8 @@ export function CarListing() {
 
                   {/* CTA */}
                   <div className="mt-4">
-                    <Button href="/cars" className="text-xs">
-                      Details Now
+                    <Button href="/booking" className="text-xs">
+                      Book Now
                     </Button>
                   </div>
                 </div>

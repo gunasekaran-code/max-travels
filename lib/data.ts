@@ -185,6 +185,7 @@ export const cars: Car[] = [
     fuel: "Petrol",
     seats: "5 Persons",
     type: "Sedan",
+    ac: true,
     image:
       "https://www.autovista.in/assets/img/new_cars_colour_variants/swift-colour-solid-fire-red.jpg",
   },
@@ -200,6 +201,7 @@ export const cars: Car[] = [
     fuel: "Petrol",
     seats: "5 Persons",
     type: "Sedan",
+    ac: true,
     image:
       "https://cdn-s3.autocarindia.com/legacy/cdni/Galleries/20251209090956_Hyundai_Aura_Titan_Grey.jpg",
   },
@@ -215,6 +217,7 @@ export const cars: Car[] = [
     fuel: "Petrol",
     seats: "5 Persons",
     type: "Sedan",
+    ac: true,
     image:
       "https://w0.peakpx.com/wallpaper/89/425/HD-wallpaper-toyota-etios-studio-2018-cars-compact-cars-2018-toyota-etios-japanese-cars-toyota.jpg",
   },
@@ -232,6 +235,7 @@ export const cars: Car[] = [
     fuel: "Diesel",
     seats: "7 Persons",
     type: "SUV",
+    ac: true,
     image:
       "https://imgd.aeplcdn.com/600x600/n/cw/ec/145675/toyota-innova-crysta-left-front-three-quarter0.jpeg?isig=0&wm=0",
   },
@@ -247,6 +251,7 @@ export const cars: Car[] = [
     fuel: "Diesel",
     seats: "7 Persons",
     type: "SUV",
+    ac: true,
     image:
       "https://i.pinimg.com/1200x/3a/1f/cb/3a1fcb1a65e2d38a9a34fbb76cec1e39.jpg",
   },
@@ -262,12 +267,13 @@ export const cars: Car[] = [
     fuel: "Petrol",
     seats: "7 Persons",
     type: "SUV",
+    ac: true,
     image:
       "https://cdn-s3.autocarindia.com/legacy/cdni/mmv_images/colors/20250808114708_Kia_Carens_Clear_White%5B1%5D.png?w=640&q=75",
   },
   {
     brand: "Maruti",
-    name: "Ertiga",
+    name: "Ertiga  (AC)",
     price: 3800,
     originalPrice: 3950,   // +150
     hours: "12 hr",
@@ -277,6 +283,7 @@ export const cars: Car[] = [
     fuel: "Petrol",
     seats: "7 Persons",
     type: "SUV",
+    ac: true,
     image:
       "https://i.pinimg.com/736x/89/32/c0/8932c0e6bacc17f73c4d64aa6aa4ff5b.jpg",
   },
