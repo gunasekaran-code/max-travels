@@ -117,18 +117,17 @@ export function Header({
             {/* NEW: Compact Phone Icon Button for screens under 400px (300px optimized) */}
             <a
               href={CONTACT.phoneHref}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-max-extra border border-max-base/30 text-max-base transition hover:bg-max-base hover:text-max-black xs:hidden"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-max-base/30 bg-max-extra text-max-base transition hover:bg-max-base hover:text-max-black xs:hidden"
               aria-label="Call Anytime"
             >
               <Phone className="h-4 w-4 stroke-[2.5]" />
             </a>
 
-            {/* UPDATED: Decreased padding/font size on ultra-small screens (px-2.5 py-1.5 text-[10px]) */}
             <Link
               href="/booking"
               className="inline-flex rounded-full bg-max-base px-2.5 py-1.5 text-[10px] font-bold text-max-black transition hover:bg-max-black hover:text-white xs:px-4 xs:py-2.5 xs:text-xs sm:px-5 sm:py-3 sm:text-sm"
             >
-              Booking
+              Book Now
             </Link>
 
             <button
@@ -143,7 +142,7 @@ export function Header({
             {/* Desktop Call Element (Stays hidden on mobile, visible on lg screens) */}
             <div className="hidden items-center gap-3 lg:flex">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-max-extra">
-                <Phone className="h-5 w-5 text-max-base" />
+                <Phone className="h-5 w-5" />
               </div>
               <div>
                 <p className="font-times text-xs text-max-gray">Call Anytime</p>

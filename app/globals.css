@@ -54,7 +54,8 @@
   }
 
   .font-times {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
   }
 
   .text-gradient-gold {

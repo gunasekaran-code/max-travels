@@ -9,7 +9,7 @@ const icons = [Car, Car, Truck, Users, Car, Car];
 
 export function PopularCars() {
   return (
-    <section className="relative py-20 md:py-28">
+    <section id="popular-cars" className="relative py-20 md:py-28">
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20"
         style={{
