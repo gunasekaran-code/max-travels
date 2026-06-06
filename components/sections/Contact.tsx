@@ -20,8 +20,7 @@ export default function ContactPage() {
     setStatus({ type: "loading", message: "Sending your request..." });
 
     try {
-      // Connects to your local Flask background runtime route target
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +39,7 @@ export default function ContactPage() {
     } catch {
       setStatus({
         type: "error",
-        message: "Failed to connect to the email server. Ensure the backend script is running.",
+        message: "Failed to connect to the email server. Please try again.",
       });
     }
   };

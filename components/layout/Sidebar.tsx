@@ -33,7 +33,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     setStatus({ type: "loading", message: "Sending your request..." });
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     } catch {
       setStatus({
         type: "error",
-        message: "Failed to connect to the email server. Please start the backend.",
+        message: "Failed to connect to the email server. Please try again.",
       });
     }
   };
