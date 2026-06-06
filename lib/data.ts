@@ -1,22 +1,3 @@
-export const navLinks = {
-  pages: [
-    { label: "Services", href: "#services" },
-    { label: "Drivers", href: "#team" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQs", href: "#faq" },
-  ],
-  cars: [
-    { label: "All Cars", href: "/cars" },
-    { label: "Car Listing", href: "/cars" },
-    { label: "Vehicle Details", href: "/cars" },
-  ],
-  blog: [
-    { label: "Blog", href: "#blog" },
-    { label: "Blog Details", href: "#blog" },
-  ],
-} as const;
-
 export const heroSlides = [
   {
     id: 1,

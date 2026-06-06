@@ -13,19 +13,26 @@ type BlurTextProps = {
   direction?: 'top' | 'bottom';
   threshold?: number;
   rootMargin?: string;
-  animationFrom?: Record<string, any>;
-  animationTo?: Array<Record<string, any>>;
+  animationFrom?: BlurAnimationTarget;
+  animationTo?: BlurAnimationTarget[];
   easing?: (t: number) => number;
   onAnimationComplete?: () => void;
   stepDuration?: number;
 };
 
-const buildKeyframes = (from: Record<string, any>, steps: Array<Record<string, any>>) => {
+type BlurAnimationTarget = {
+  filter?: string | string[];
+  opacity?: number | number[];
+  y?: number | number[];
+};
+
+const buildKeyframes = (from: BlurAnimationTarget, steps: BlurAnimationTarget[]) => {
   const keys = new Set([...Object.keys(from), ...steps.flatMap((s) => Object.keys(s))]);
 
-  const keyframes: Record<string, any[]> = {};
+  const keyframes: BlurAnimationTarget = {};
   keys.forEach((k) => {
-    keyframes[k] = [from[k], ...steps.map((s) => s[k])];
+    const key = k as keyof BlurAnimationTarget;
+    keyframes[key] = [from[key], ...steps.map((s) => s[key])] as string[] & number[];
   });
   return keyframes;
 };

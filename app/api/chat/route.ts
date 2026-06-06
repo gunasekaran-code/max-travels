@@ -1,18 +1,23 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY!,
 });
 
+type ChatMessage = {
+  role?: string;
+  content?: string;
+};
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const messages = body.messages ?? [];
+    const messages: ChatMessage[] = body.messages ?? [];
 
-    const formattedContents = messages.map((msg: any) => ({
+    const formattedContents = messages.map((msg) => ({
       role: msg.role === "user" ? "user" : "model",
-      parts: [{ text: msg.content }],
+      parts: [{ text: msg.content ?? "" }],
     }));
 
     const response = await ai.models.generateContent({

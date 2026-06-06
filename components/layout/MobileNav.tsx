@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
-import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 type MobileNavProps = {
@@ -16,9 +15,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   const allLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    ...navLinks.pages,
-    ...navLinks.cars,
-    ...navLinks.blog,
+    { label: "Overview", href: "/cars" },
     { label: "Contact", href: "/contact" },
     { label: "Booking", href: "/booking" },
   ];

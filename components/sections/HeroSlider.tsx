@@ -4,7 +4,6 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
-import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import BlurText from "@/components/BlurText";
 import { cn } from "@/lib/utils";
@@ -124,7 +123,7 @@ export const heroSlides = [
     title: "Car",
     highlight: "Rental",
     tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1664168564454-4d4f33c836f8?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,

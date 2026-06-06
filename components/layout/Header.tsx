@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
-  ChevronDown,
   Menu,
   Phone,
   Search,
@@ -106,7 +105,7 @@ export function Header({
             <ul className="flex items-center gap-8 font-medium text-max-black">
               <li><Link href="/" className="text-max-base">Home</Link></li>
               <li><Link href="/about" className="hover:text-max-base">About Us</Link></li>
-              <li><Link href="/cars" className="hover:text-max-base">Cars</Link></li>
+              <li><Link href="/cars" className="hover:text-max-base">Overview</Link></li>
               <li><Link href="/gallery" className="hover:text-max-base">Gallery</Link></li>
               <li><Link href="/contact" className="hover:text-max-base">Contact</Link></li>
             </ul>

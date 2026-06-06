@@ -710,7 +710,7 @@ export default function BookingPage() {
                 </button>
 
                 <p style={{ textAlign: "center", fontSize: "11.5px", color: "#94a3b8", marginTop: "-8px" }}>
-                  📲 You'll receive a WhatsApp confirmation after booking.
+                  📲 You&apos;ll receive a WhatsApp confirmation after booking.
                 </p>
               </form>
             </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { CONTACT } from "@/lib/constants";
 
 export default function ContactPage() {
   // Form submission state trackers
@@ -38,7 +37,7 @@ export default function ContactPage() {
       } else {
         setStatus({ type: "error", message: data.error || "Something went wrong on the server." });
       }
-    } catch (error) {
+    } catch {
       setStatus({
         type: "error",
         message: "Failed to connect to the email server. Ensure the backend script is running.",

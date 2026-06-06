@@ -27,7 +27,7 @@ export function CarListing() {
   const hasLoneLastCard = remainder === 1;
 
   return (
-    <section id="listings" className="bg-max-extra/40 py-20 md:py-28">
+    <section id="listings" className="bg-max-extra/40 py-10 md:py-18">
       <div className="container-max">
         <SectionTitle
           tagline="Checkout our rental fleet"
@@ -107,7 +107,7 @@ export function CarListing() {
                 {/* Body */}
                 <div className="p-6">
                   <h3 className="font-display text-lg font-semibold">
-                    <a href="/cars" className="hover:text-max-base">
+                    <a className="hover:text-max-base">
                       {car.name}
                     </a>
                   </h3>
