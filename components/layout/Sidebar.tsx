@@ -14,7 +14,7 @@ type SidebarProps = {
 };
 
 export function Sidebar({ open, onClose }: SidebarProps) {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", number: "", message: "" });
   const [status, setStatus] = useState<{
     type: "idle" | "loading" | "success" | "error";
     message: string;
@@ -23,8 +23,21 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     message: "",
   });
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+
+    if (name === "number") {
+      // 1. Remove all non-digit characters
+      const cleanedValue = value.replace(/\D/g, "");
+
+      // 2. Optional: Limit the length (e.g., max 10 digits)
+      if (cleanedValue.length <= 10) {
+        setFormData((prev) => ({ ...prev, [name]: cleanedValue }));
+      }
+      return;
+    }
+
+    // Handle other inputs normally
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -51,11 +64,11 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       }
 
       setStatus({ type: "success", message: "Quote request sent successfully." });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", number: "", message: "" });
     } catch {
       setStatus({
         type: "error",
-        message: "Failed to connect to the email server. Please try again.",
+        message: "Failed to connect to the number server. Please try again.",
       });
     }
   };
@@ -131,11 +144,11 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 className="w-full rounded-full border border-max-border px-5 py-3 text-sm focus:border-max-base focus:outline-none disabled:opacity-50"
               />
               <input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="number"
+                name="number"
+                value={formData.number}
                 onChange={handleInputChange}
-                placeholder="Email"
+                placeholder="number"
                 required
                 disabled={status.type === "loading"}
                 className="w-full rounded-full border border-max-border px-5 py-3 text-sm focus:border-max-base focus:outline-none disabled:opacity-50"

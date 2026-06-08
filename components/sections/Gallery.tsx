@@ -44,7 +44,7 @@ const destinations = [
     id: 6,
     title: "Lisbon Coast",
     country: "Portugal",
-    image: "https://images.unsplash.com/photo-1588598198321-9735fd1af3b7?w=900&q=85",
+    image: "https://images.unsplash.com/photo-1601399470081-29ab3942fd8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 7,

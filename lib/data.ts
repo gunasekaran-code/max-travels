@@ -70,14 +70,14 @@ export const processSteps = [
     description:
       "Browse categories and compare vehicles by price, features, and availability.",
     image:
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80",
+      "https://cdn.shopify.com/s/files/1/0843/2612/1760/files/Gemini_Generated_Image_urvlgpurvlgpurvl.jpg?v=1746792608",
   },
   {
     title: "Come In Contact",
     description:
       "Confirm your dates, pickup location, and add-ons with our booking team.",
     image:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
+      "https://images.unsplash.com/photo-1719937206224-602b1db4d883?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Pick-Up Locations",
@@ -91,7 +91,7 @@ export const processSteps = [
     description:
       "Hit the road with full insurance options and 24/7 roadside assistance.",
     image:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80",
+      "https://images.unsplash.com/photo-1541570213932-8cd806e3f8f6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ] as const;
 
@@ -323,41 +323,41 @@ export const cars: Car[] = [
 export const pricingPlans = [
   {
     name: "Skyline Taxi",
-    price: 10,
+    price: 199,
     description:
       "Ideal for short city trips with predictable rates and quick dispatch.",
     icon: "taxi",
     features: [
-      { label: "Initial charge", value: "$06" },
-      { label: "Additional Kilometre", value: "$06" },
-      { label: "Per minute stopped traffic", value: "$06" },
-      { label: "Waiting Charge", value: "$06" },
+      { label: "Initial charge", value: "₹40" },
+      { label: "Additional Kilometre", value: "₹13" },
+      { label: "Per minute stopped traffic", value: "₹1.50" },
+      { label: "Waiting Charge", value: "₹02" },
     ],
   },
   {
     name: "Urban Cabs",
-    price: 30,
+    price: 499,
     description:
       "Balanced plan for daily commuters with priority booking windows.",
     icon: "suv",
     features: [
-      { label: "Initial charge", value: "$08" },
-      { label: "Additional Kilometre", value: "$07" },
-      { label: "Per minute stopped traffic", value: "$05" },
-      { label: "Waiting Charge", value: "$06" },
+      { label: "Initial charge", value: "₹50" },
+      { label: "Additional Kilometre", value: "₹15" },
+      { label: "Per minute stopped traffic", value: "₹02" },
+      { label: "Waiting Charge", value: "₹2.50" },
     ],
   },
   {
     name: "TurboTaxi",
-    price: 50,
+    price: 999,
     description:
       "Premium tier with luxury vehicles and dedicated customer support.",
     icon: "jeep",
     features: [
-      { label: "Initial charge", value: "$12" },
-      { label: "Additional Kilometre", value: "$09" },
-      { label: "Per minute stopped traffic", value: "$06" },
-      { label: "Waiting Charge", value: "$08" },
+      { label: "Initial charge", value: "₹70" },
+      { label: "Additional Kilometre", value: "₹20" },
+      { label: "Per minute stopped traffic", value: "₹2.50" },
+      { label: "Waiting Charge", value: "₹03" },
     ],
   },
 ] as const;

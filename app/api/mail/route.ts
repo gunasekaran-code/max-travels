@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 interface MailRequestBody {
   name?: string;
-  email?: string;
+  number?: string;
   message?: string;
 }
 
@@ -17,9 +17,9 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
-function buildEmailHtml({ name, email, message }: Required<MailRequestBody>): string {
+function buildnumberHtml({ name, number, message }: Required<MailRequestBody>): string {
   const safeName = escapeHtml(name);
-  const safeEmail = escapeHtml(email);
+  const safenumber = escapeHtml(number);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
   return `
@@ -36,8 +36,8 @@ function buildEmailHtml({ name, email, message }: Required<MailRequestBody>): st
             <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;">${safeName}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Email:</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;"><a href="mailto:${safeEmail}" style="color: #f59e0b;">${safeEmail}</a></td>
+            <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">number:</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;"><a href="mailto:${safenumber}" style="color: #f59e0b;">${safenumber}</a></td>
           </tr>
         </table>
 
@@ -56,10 +56,10 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as MailRequestBody;
     const name = body.name?.trim();
-    const email = body.email?.trim();
+    const number = body.number?.trim();
     const message = body.message?.trim();
 
-    if (!name || !email || !message) {
+    if (!name || !number || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
         from: "onboarding@resend.dev",
         to: "gunasekaran.code@gmail.com",
         subject: `New Message from ${name}`,
-        html: buildEmailHtml({ name, email, message }),
+        html: buildnumberHtml({ name, number, message }),
       }),
     });
 
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     if (!resendResponse.ok) {
       console.error("Resend API error:", JSON.stringify(resendData, null, 2));
       return NextResponse.json(
-        { error: resendData?.message ?? "Failed to send email" },
+        { error: resendData?.message ?? "Failed to send number" },
         { status: 502 }
       );
     }

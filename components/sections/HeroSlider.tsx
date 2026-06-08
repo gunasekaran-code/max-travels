@@ -123,7 +123,7 @@ export const heroSlides = [
     title: "Car",
     highlight: "Rental",
     tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1664168564454-4d4f33c836f8?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1593692716621-1e228b0a9224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
@@ -131,7 +131,8 @@ export const heroSlides = [
     title: "Car",
     highlight: "Booking",
     tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1769160944776-a5abea006d77?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    
   },
   {
     id: 3,
@@ -139,6 +140,6 @@ export const heroSlides = [
     title: "Car",
     highlight: "Choosing",
     tagline: "Experience",
-    image: "https://www.carrentalplace.com/wp-content/uploads/2019/09/850-2-AdobeStock_245908332.jpg",
+    image: "https://images.unsplash.com/photo-1720775583890-c08c9d4bf463?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ] as const;

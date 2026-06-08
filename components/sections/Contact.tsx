@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function ContactPage() {
   // Form submission state trackers
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", number: "", message: "" });
   const [status, setStatus] = useState<{ type: "idle" | "loading" | "success" | "error"; message: string }>({
     type: "idle",
     message: "",
@@ -12,6 +12,19 @@ export default function ContactPage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+
+    if (name === "number") {
+      // 1. Remove all non-digit characters
+      const cleanedValue = value.replace(/\D/g, "");
+
+      // 2. Optional: Limit the length (e.g., max 10 digits)
+      if (cleanedValue.length <= 10) {
+        setFormData((prev) => ({ ...prev, [name]: cleanedValue }));
+      }
+      return;
+    }
+
+    // Handle other inputs normally
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -32,14 +45,14 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus({ type: "success", message: "Message sent cleanly! Check your inbox." });
-        setFormData({ name: "", email: "", message: "" }); // Clear inputs on success
+        setFormData({ name: "", number: "", message: "" }); // Clear inputs on success
       } else {
         setStatus({ type: "error", message: data.error || "Something went wrong on the server." });
       }
     } catch {
       setStatus({
         type: "error",
-        message: "Failed to connect to the email server. Please try again.",
+        message: "Failed to connect to the number server. Please try again.",
       });
     }
   };
@@ -124,13 +137,13 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">Email</label>
+                <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">number</label>
                 <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="number"
+                  name="number"
+                  value={formData.number}
                   onChange={handleInputChange}
-                  placeholder="Enter your email"
+                  placeholder="Enter your number"
                   required
                   disabled={status.type === "loading"}
                   className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-900 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all placeholder:text-gray-400 disabled:opacity-50"

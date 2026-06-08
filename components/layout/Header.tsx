@@ -117,10 +117,10 @@ export function Header({
             {/* NEW: Compact Phone Icon Button for screens under 400px (300px optimized) */}
             <a
               href={CONTACT.phoneHref}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-max-base/30 bg-max-extra text-max-base transition hover:bg-max-base hover:text-max-black xs:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-max-base/30 bg-max-extra text-max-base transition hover:bg-max-base hover:text-max-black xs:hidden"
               aria-label="Call Anytime"
             >
-              <Phone className="h-4 w-4 stroke-[2.5]" />
+              <Phone className="h-5 w-6 stroke-[2.5]" />
             </a>
 
             <Link
@@ -133,7 +133,7 @@ export function Header({
             <button
               type="button"
               onClick={onOpenSearch}
-              className="hidden h-11 w-11 items-center justify-center rounded-full border border-max-border text-max-black transition hover:border-max-base hover:text-max-base sm:flex"
+              className="hidden h-10 w-10 items-center justify-center rounded-full border border-max-border text-max-black transition hover:border-max-base hover:text-max-base sm:flex"
               aria-label="Open search"
             >
               <Search className="h-5 w-5" />
@@ -141,9 +141,6 @@ export function Header({
 
             {/* Desktop Call Element (Stays hidden on mobile, visible on lg screens) */}
             <div className="hidden items-center gap-3 lg:flex">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-max-extra">
-                <Phone className="h-5 w-5" />
-              </div>
               <div>
                 <p className="font-times text-xs text-max-gray">Call Anytime</p>
                 <a

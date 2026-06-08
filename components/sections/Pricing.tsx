@@ -30,7 +30,7 @@ export function Pricing() {
                 <div className="mt-6 flex items-center justify-between border-b border-max-border pb-6">
                   <div>
                     <span className="font-display text-4xl font-bold text-max-base">
-                      ${plan.price}
+                      ₹{plan.price}
                     </span>
                     <span className="text-max-gray">/month</span>
                   </div>
