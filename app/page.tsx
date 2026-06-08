@@ -3,13 +3,13 @@ import { HeroSlider } from "@/components/sections/HeroSlider";
 import { SlidingText } from "@/components/sections/SlidingText";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Counter } from "@/components/sections/Counter";
 import { VideoCTA } from "@/components/sections/VideoCTA";
 import { Pricing } from "@/components/sections/Pricing";
 import { CallBanner } from "@/components/sections/CallBanner";
 import { PopularCars } from "@/components/sections/PopularCars";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { LetsTalk } from "@/components/sections/LetsTalk";
 import { Team } from "@/components/sections/Team";
@@ -58,13 +58,13 @@ export default function HomePage() {
       <SlidingText />
       <Services />
       <Process />
+      <Testimonials />
       <WhyChoose />
       <Counter />
       <VideoCTA />
       <Pricing />
       <CallBanner />
       <PopularCars />
-      <Testimonials />
       <FAQ />
       <LetsTalk />
       <Team />
