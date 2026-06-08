@@ -376,31 +376,67 @@ export const testimonials = [
     name: "Adam Smith",
     role: "Customer",
     text: "Smooth booking process and the car was spotless. Pickup took less than ten minutes at the airport branch.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+    rating: 5,
+    date: "2 weeks ago",
   },
   {
     name: "Sarah Milne",
     role: "Customer",
     text: "Great value for a week-long rental. Staff explained insurance options clearly with no hidden fees.",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+    rating: 5,
+    date: "1 month ago",
   },
   {
     name: "Marco Janson",
     role: "Customer",
     text: "Used max for a corporate event fleet. Every driver arrived on time and vehicles were premium grade.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+    rating: 5,
+    date: "3 weeks ago",
   },
   {
     name: "Jessica Brown",
     role: "Customer",
     text: "The mobile-friendly checkout made last-minute changes easy. Will book again for our next road trip.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+    rating: 5,
+    date: "2 months ago",
   },
-] as const;
+  {
+    name: "Ravi Kumar",
+    role: "Customer",
+    text: "Excellent service from start to finish. The driver was professional and the vehicle was immaculate.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+    rating: 5,
+    date: "1 week ago",
+  },
+  {
+    name: "Priya Nair",
+    role: "Customer",
+    text: "Best cab service in Coimbatore! Always on time, clean cars, and very polite drivers. Highly recommended.",
+    image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&q=80",
+    rating: 5,
+    date: "3 days ago",
+  },
+  {
+    name: "David Chen",
+    role: "Customer",
+    text: "Used Max Travels for airport transfers multiple times. Never been late once. Superb reliability.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80",
+    rating: 5,
+    date: "5 days ago",
+  },
+  {
+    name: "Ananya Krishnan",
+    role: "Customer",
+    text: "Wonderful experience! Booked for a family trip and everything was perfectly arranged. Very comfortable ride.",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80",
+    rating: 5,
+    date: "2 weeks ago",
+  },
+];
 
 export const faqs = [
   {
