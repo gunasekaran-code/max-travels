@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 /* ─── Data ─────────────────────────────────────────── */
 const locations = [
@@ -1030,17 +1031,12 @@ export default function BookingPage() {
           {/* ── LEFT: Hero Panel ── */}
           <div className="hero-panel">
             {/* BG image */}
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
               alt=""
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
+              fill
+              sizes="(min-width: 768px) 40vw, 100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
             />
             {/* Overlays */}
             <div

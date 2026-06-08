@@ -1,5 +1,3 @@
-import { Play } from "lucide-react";
-
 export function VideoCTA() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">

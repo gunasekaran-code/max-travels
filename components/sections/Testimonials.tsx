@@ -1,5 +1,6 @@
 "use client";
 import { testimonials } from "@/lib/data";
+import Image from "next/image";
 import { useRef, useEffect } from "react";
 
 // Google "G" logo SVG
@@ -46,7 +47,7 @@ function ReviewCard({ review }: { review: (typeof testimonials)[0] }) {
         <div className="flex items-center gap-3">
           <div className="relative">
             <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-[#E3E3E3] group-hover:ring-[#FFB51D] transition-all duration-300">
-              <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+              <Image src={review.image} alt={review.name} fill sizes="44px" className="object-cover" />
             </div>
           </div>
           <div>
@@ -66,10 +67,10 @@ function ReviewCard({ review }: { review: (typeof testimonials)[0] }) {
 
       {/* Review text — full, no truncation */}
       <div className="relative">
-        <span className="text-[#FFB51D] text-3xl font-serif leading-none absolute -top-1 -left-1 select-none">"</span>
+        <span className="text-[#FFB51D] text-3xl font-serif leading-none absolute -top-1 -left-1 select-none">&ldquo;</span>
         <p className="text-[13.5px] text-[#3C4043] leading-[1.6] pl-4 pr-1">
           {review.text}
-          <span className="text-[#FFB51D] text-3xl font-serif leading-none align-bottom ml-0.5 select-none">"</span>
+          <span className="text-[#FFB51D] text-3xl font-serif leading-none align-bottom ml-0.5 select-none">&rdquo;</span>
         </p>
       </div>
 
