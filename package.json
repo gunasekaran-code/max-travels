@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npx @cloudflare/next-on-pages",
+    "build": "next build",
     "dev": "next dev",
     "preview": "npx wrangler pages dev",
     "start": "next start",
