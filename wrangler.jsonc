@@ -1,9 +1,19 @@
 
+// {
+//   "name": "max-travels-client",
+//   "compatibility_date": "2024-09-23",
+//   "compatibility_flags": ["nodejs_compat"],
+//   "pages_build_output_dir": ".vercel/output/static"
+// }
+
+
 {
   "name": "max-travels-client",
-  "compatibility_date": "2024-09-23",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-01-01",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": ".vercel/output/static"
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  }
 }
-
-
