@@ -22,7 +22,7 @@ const locations = [
 
 const carTypes = [
   { id: "Sedan", label: "Sedan", icon: "🚗", desc: "4 passengers · Comfortable" },
-  { id: "SUV", label: "SUV", icon: "🚙", desc: "6 passengers · Spacious" },
+  { id: "MUV", label: "MUV", icon: "🚙", desc: "6 passengers · Spacious" },
   { id: "Tempo Van", label: "Tempo Van", icon: "🚐", desc: "12 passengers · Groups" },
 ];
 
@@ -872,7 +872,7 @@ export default function BookingPage() {
 
         .booking-card {
           width: 100%;
-          max-width: 1100px;
+          max-width: 1335px;
           border-radius: 24px;
           overflow: hidden;
           display: flex;
@@ -952,7 +952,7 @@ export default function BookingPage() {
 
           .hero-panel {
             width: 100%;
-            min-height: 220px;
+            min-height: 320px;
             padding: 20px 16px 24px;
           }
 
@@ -1020,7 +1020,7 @@ export default function BookingPage() {
         }
 
         /* scrollbar */
-        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar { width: 2px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
       `}</style>
@@ -1102,7 +1102,7 @@ export default function BookingPage() {
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  marginBottom: "10px",
+                  marginBottom: "-5px",
                 }}
               >
                 Max Travels
@@ -1175,7 +1175,7 @@ export default function BookingPage() {
 
           {/* ── RIGHT: Form Panel ── */}
           <div className="form-panel">
-            <div className="fade-up" style={{ width: "100%", maxWidth: "520px" }}>
+            <div className="fade-up" style={{ width: "100%", maxWidth: "680px" }}>
               <h2
                 style={{
                   fontFamily: "'Syne', sans-serif",
@@ -1255,7 +1255,7 @@ export default function BookingPage() {
 
               <form
                 onSubmit={handleSubmit}
-                style={{ display: "flex", flexDirection: "column", gap: "18px" }}
+                style={{ display: "flex", flexDirection: "column", gap: "7px" }}
               >
                 {/* Name + Phone */}
                 <div className="nameph-grid fade-up fade-up-1">

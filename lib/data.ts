@@ -129,7 +129,7 @@ export const carBrands = [
   "Acura",
 ] as const;
 
-export type CarType = "Sedan" | "SUV" | "Tempo Van";
+export type CarType = "Sedan" | "MUV" | "Tempo Van";
 
 export interface Car {
   brand: string;
@@ -150,7 +150,7 @@ export interface Car {
   image: string;
 }
 
-export const carTypes: CarType[] = ["Sedan", "SUV", "Tempo Van"];
+export const carTypes: CarType[] = ["Sedan", "MUV", "Tempo Van"];
 
 export const cars: Car[] = [
   // ── Sedan ──────────────────────────────────────────────
@@ -203,7 +203,7 @@ export const cars: Car[] = [
       "https://w0.peakpx.com/wallpaper/89/425/HD-wallpaper-toyota-etios-studio-2018-cars-compact-cars-2018-toyota-etios-japanese-cars-toyota.jpg",
   },
 
-  // ── SUV ────────────────────────────────────────────────
+  // ── MUV ────────────────────────────────────────────────
   {
     brand: "Toyota",
     name: "Innova Crysta",
@@ -215,7 +215,7 @@ export const cars: Car[] = [
     transmission: "Automatic",
     fuel: "Diesel",
     seats: "7 Persons",
-    type: "SUV",
+    type: "MUV",
     ac: true,
     image:
       "https://imgd.aeplcdn.com/600x600/n/cw/ec/145675/toyota-innova-crysta-left-front-three-quarter0.jpeg?isig=0&wm=0",
@@ -231,7 +231,7 @@ export const cars: Car[] = [
     transmission: "Manual",
     fuel: "Diesel",
     seats: "7 Persons",
-    type: "SUV",
+    type: "MUV",
     ac: true,
     image:
       "https://i.pinimg.com/1200x/3a/1f/cb/3a1fcb1a65e2d38a9a34fbb76cec1e39.jpg",
@@ -247,7 +247,7 @@ export const cars: Car[] = [
     transmission: "Automatic",
     fuel: "Petrol",
     seats: "7 Persons",
-    type: "SUV",
+    type: "MUV",
     ac: true,
     image:
       "https://cdn-s3.autocarindia.com/legacy/cdni/mmv_images/colors/20250808114708_Kia_Carens_Clear_White%5B1%5D.png?w=640&q=75",
@@ -263,7 +263,7 @@ export const cars: Car[] = [
     transmission: "Manual",
     fuel: "Petrol",
     seats: "7 Persons",
-    type: "SUV",
+    type: "MUV",
     ac: true,
     image:
       "https://i.pinimg.com/736x/89/32/c0/8932c0e6bacc17f73c4d64aa6aa4ff5b.jpg",
@@ -339,7 +339,7 @@ export const pricingPlans = [
     price: 499,
     description:
       "Balanced plan for daily commuters with priority booking windows.",
-    icon: "suv",
+    icon: "MUV",
     features: [
       { label: "Initial charge", value: "₹50" },
       { label: "Additional Kilometre", value: "₹15" },
@@ -452,7 +452,7 @@ export const faqs = [
   {
     question: "What types of vehicles are available for rent?",
     answer:
-      "We offer sedans, SUVs, luxury cars, vans, and electric vehicles. Availability varies by location and season.",
+      "We offer sedans, MUVs, luxury cars, vans, and electric vehicles. Availability varies by location and season.",
   },
   {
     question: "Can I rent a car with a debit card?",

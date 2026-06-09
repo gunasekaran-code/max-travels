@@ -27,7 +27,7 @@ const searchItems = [
     title: "Cars",
     href: "/cars",
     description: "Browse vehicles, pricing, and rental options",
-    keywords: "cars overview vehicles sedan suv tempo van rental price fleet",
+    keywords: "cars overview vehicles sedan MUV tempo van rental price fleet",
   },
   {
     title: "Booking",
@@ -57,7 +57,7 @@ const searchItems = [
     title: "Popular Cars",
     href: "/#popular-cars",
     description: "Quick access to frequently booked vehicles",
-    keywords: "popular cars sedan suv tempo traveller vehicle book",
+    keywords: "popular cars sedan MUV tempo traveller vehicle book",
   },
   {
     title: "Pricing",
