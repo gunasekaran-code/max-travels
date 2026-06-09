@@ -50,7 +50,7 @@ export function About() {
                          md:-left-6 md:px-6 md:py-5"
             >
               <div className="font-display text-2xl font-bold text-max-black sm:text-3xl md:text-4xl">
-                50<span className="text-sm sm:text-base md:text-lg">+</span>
+                5<span className="text-sm sm:text-base md:text-lg">+</span>
               </div>
               <p className="mt-0.5 text-[10px] font-medium uppercase leading-tight text-max-black/80 sm:text-xs">
                 Years of
@@ -83,7 +83,7 @@ export function About() {
             <ul className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
               {[
                 { label: "Time Awareness", percent: 90 },
-                { label: "Driver Experience", percent: 70 },
+                { label: "Driver Experience", percent:85 },
               ].map((item) => (
                 <li key={item.label}>
                   <div className="mb-2 flex justify-between text-xs font-medium sm:text-sm">

@@ -155,10 +155,17 @@ export function Header({
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-max-base/15">
-                  <MapPin className="h-3 w-3 text-max-base" />
-                </span>
-                <span>{CONTACT.address}</span>
+                <a
+                  href="https://share.google/yVTXzmjZppvosmtvL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-max-base transition-colors duration-200"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-max-base/15">
+                    <MapPin className="h-3 w-3 text-max-base" />
+                  </span>
+                  <span>{CONTACT.address}</span>
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-max-base/15">
@@ -210,7 +217,7 @@ export function Header({
 
             {/* ── Desktop Nav Links ── */}
             <div className="hidden flex-1 items-center justify-center xl:flex">
-              <ul className="flex items-center gap-7 font-medium text-[0.9rem] text-max-black">
+              <ul className="flex items-center gap-7 font-semibold text-base text-max-black">
                 {NAV_LINKS.map(({ href, label }) => (
                   <li key={href}>
                     <Link
@@ -300,9 +307,6 @@ export function Header({
 
               {/* ── Desktop Call Info ── */}
               <div className="hidden items-center gap-2.5 lg:flex">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-max-base/15">
-                  <Phone className="h-4 w-4 text-max-base" />
-                </div>
                 <div>
                   <p className="font-times text-[10px] text-max-gray">Call Anytime</p>
                   <a

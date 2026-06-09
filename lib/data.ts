@@ -531,7 +531,7 @@ export const blogPosts = [
     date: { day: "12", month: "Nov" },
     tag: "Guides",
     image:
-      "https://images.unsplash.com/photo-148529157115f-77046a4775ea?w=800&q=80",
+      "https://images.unsplash.com/photo-1532931899774-fbd4de0008fb?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Rental cost of sport and luxury cars explained",

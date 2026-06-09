@@ -119,41 +119,53 @@ export function Footer() {
                   Our Headquarters
                 </h3>
                 
-                {/* Trending Style Map Location Card */}
-                <a 
-                  href={googleMapsUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative block w-full h-36 rounded-2xl overflow-hidden border border-white/10 hover:border-max-base/40 transition-all duration-300 shadow-lg hover:shadow-max-base/5"
-                >
-                  {/* Subtle Grid abstract background simulating map styling color-neutral */}
-                  <div className="absolute inset-0 bg-neutral-900 bg-[linear-gradient(to_right,#232323_1px,transparent_1px),linear-gradient(to_bottom,#232323_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-                  
-                  {/* Neon active radar pulse inside map representation */}
-                  <div className="absolute top-1/2 left-1/3 -translate-y-1/2 -translate-x-1/2 flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-max-base opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-max-base"></span>
-                  </div>
+{/* Trending Style Map Location Card (Real Map Image) */}
+<a 
+  href={googleMapsUrl} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="group relative block w-full h-36 rounded-2xl overflow-hidden border border-neutral-200/80 hover:border-max-base/60 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-max-base/5 bg-neutral-100"
+>
+  {/* Actual Map Graphic Image (with light yellow/warm tint filter) */}
+  <div className="absolute inset-0 w-full h-full grayscale-[20%] sepia-[10%] brightness-[95%] contrast-[90%] pointer-events-none">
+    <img
+      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&auto=format&fit=crop&q=60" 
+      alt="Location Map"
+      className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700"
+    />
+    {/* Subtle gradient overlay to smoothly fade map into the bottom banner */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/40" />
+  </div>
+  
+  {/* Soft ambient yellow glow behind the pulse */}
+  <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-16 w-16 rounded-full bg-max-base/30 blur-md pointer-events-none" />
 
-                  {/* Glassmorphism Details Overlay Banner */}
-                  <div className="absolute bottom-0 inset-x-0 bg-max-black/60 backdrop-blur-md border-t border-white/5 p-3 flex items-center justify-between transition-colors group-hover:bg-max-black/80">
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-max-base group-hover:bg-max-base group-hover:text-max-black transition-colors duration-300">
-                        <Compass className="h-4 w-4 animate-spin-slow" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-xs font-semibold text-white uppercase tracking-wider">Max Travels</p>
-                        <p className="font-times text-[11px] text-white/60 truncate max-w-[180px]">
-                          {CONTACT.address}
-                        </p>
-                      </div>
-                    </div>
-                    <span className="text-xs font-medium text-max-base flex items-center gap-1 shrink-0 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                      Open Map <ArrowRight className="h-3 w-3" />
-                    </span>
-                  </div>
-                </a>
-              </div>
+  {/* Neon active radar pulse centered directly over the map graphic */}
+  <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex h-3.5 w-3.5">
+    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-max-base opacity-75"></span>
+    <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-max-base border-2 border-white shadow-sm"></span>
+  </div>
+
+  {/* Frosted Light Glassmorphism Details Overlay Banner */}
+  <div className="absolute bottom-0 inset-x-0 bg-white/80 backdrop-blur-md border-t border-neutral-200/50 p-3 flex items-center justify-between transition-colors group-hover:bg-white/95">
+    <div className="flex items-center gap-2.5 min-w-0">
+      {/* Compass Icon Wrapper */}
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-max-base/10 text-max-black group-hover:bg-max-base transition-colors duration-300">
+        <Compass className="h-4 w-4 animate-spin-slow text-max-black" />
+      </div>
+      <div className="min-w-0">
+        <p className="text-xs font-bold text-max-black uppercase tracking-wider">Max Travels</p>
+        <p className="font-sans text-[11px] font-medium text-neutral-600 truncate max-w-[180px]">
+          {CONTACT.address}
+        </p>
+      </div>
+    </div>
+    <span className="text-xs font-semibold text-max-black flex items-center gap-1 shrink-0 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+      Open Map <ArrowRight className="h-3 w-3 text-max-base" />
+    </span>
+  </div>
+</a>
+</div>
 
               {/* Direct Reach Contacts below card */}
               <ul className="font-times space-y-3 text-sm border-t border-white/5 pt-4">
