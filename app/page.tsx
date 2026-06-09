@@ -9,7 +9,6 @@ import { Counter } from "@/components/sections/Counter";
 import { VideoCTA } from "@/components/sections/VideoCTA";
 import { Pricing } from "@/components/sections/Pricing";
 import { CallBanner } from "@/components/sections/CallBanner";
-import { PopularCars } from "@/components/sections/PopularCars";
 import { FAQ } from "@/components/sections/FAQ";
 import { LetsTalk } from "@/components/sections/LetsTalk";
 import { Team } from "@/components/sections/Team";
@@ -64,7 +63,6 @@ export default function HomePage() {
       <VideoCTA />
       <Pricing />
       <CallBanner />
-      <PopularCars />
       <FAQ />
       <LetsTalk />
       <Team />

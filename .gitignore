@@ -8,6 +8,10 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
+# Build outputs and framework states
+.open-next/
+.wrangler/
+
 # testing
 /coverage
 
