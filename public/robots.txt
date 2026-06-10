@@ -1,4 +1,4 @@
-# Max Travels - Robots Configuration
+t# Max Travels - Robots Configuration
 
 # Default rule for all user agents
 User-agent: *

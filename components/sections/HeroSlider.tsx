@@ -41,19 +41,19 @@ export function HeroSlider() {
                   sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-max-black/85 via-max-black/50 to-transparent" />
-                
+
                 {/* 
                   FIX 1: Changed padding to pt-32 pb-24 so the text starts perfectly below 
                   your fixed header, and doesn't crash into the top screen boundary.
                 */}
                 <div className="container-max relative flex h-full pt-32 pb-24 sm:pt-40 sm:pb-28">
-                  
+
                   {/* 
                     FIX 2: Added `justify-between` to force the text block to the top 
                     and the action buttons to the bottom of the hero space.
                   */}
                   <div className="flex h-full max-w-2xl flex-col justify-between text-white">
-                    
+
                     {/* Top Section: Main Typography */}
                     <div>
                       <p className="mb-3 font-subheading text-sm font-bold uppercase tracking-[0.2em] text-max-base">
@@ -66,7 +66,7 @@ export function HeroSlider() {
                         direction="top"
                         className="font-display text-4xl font-black leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-7xl"
                       />
-                      <span className="mt-2 block font-subheading text-2xl font-semibold text-white md:text-4xl">
+                      <span className="mt-2 block font-subheading text-base md:text-lg text-yellow-400 md:text-base">
                         {slide.tagline}
                       </span>
                     </div>
@@ -96,7 +96,7 @@ export function HeroSlider() {
           ))}
         </div>
       </div>
-      
+
       {/* Slide dots tracking along the bottom center */}
       <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 gap-2">
         {heroSlides.map((_, i) => (
@@ -120,26 +120,25 @@ export const heroSlides = [
   {
     id: 1,
     subtitle: "Your Best",
-    title: "Car",
+    title: "Thoothukudi Car",
     highlight: "Rental",
-    tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1593692716621-1e228b0a9224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tagline: "Experience Premium & Budget Travel Comfortably",
+    image: "https://images.unsplash.com/photo-1593692716621-1e228b0a9224?q=80&w=2069&auto=format&fit=crop",
   },
   {
     id: 2,
     subtitle: "Your Best",
-    title: "Car",
+    title: "Tuticorin Outstation",
     highlight: "Booking",
-    tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1769160944776-a5abea006d77?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    
+    tagline: "Experience Hassle-Free Intercity Journeys",
+    image: "https://images.unsplash.com/photo-1769160944776-a5abea006d77?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 3,
     subtitle: "Your Best",
-    title: "Car",
-    highlight: "Choosing",
-    tagline: "Experience",
-    image: "https://images.unsplash.com/photo-1720775583890-c08c9d4bf463?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Tamil Nadu Tour",
+    highlight: "Planning",
+    tagline: "Experience Tailored Travel Packages From Thoothukudi",
+    image: "https://images.unsplash.com/photo-1720775583890-c08c9d4bf463?q=80&w=3132&auto=format&fit=crop",
   },
 ] as const;

@@ -64,19 +64,21 @@ export function About() {
           <div className="mt-6 lg:mt-0">
             <SectionTitle
               align="left"
-              tagline="About max"
-              title="Welcome to Max Travels car booking company"
+              tagline="Max Travels in Thoothukudi"
+              title="Car Rental in Thoothukudi (Tuticorin)"
               className="mb-5 md:mb-6"
             />
 
-            <p className="font-subheading text-base font-medium text-max-black sm:text-lg">
-              Committed to providing our customers with ultimate service.
+            <h2 className="font-display text-2xl font-bold text-max-black sm:text-3xl">
+              Car Rental in Thoothukudi (Tuticorin)
+            </h2>
+
+            <p className="mt-3 text-sm leading-relaxed text-max-gray sm:mt-4 sm:text-base">
+              Max Travels is a trusted car travels near me option in Thoothukudi. We provide <strong>car rental Thoothukudi</strong> with self-drive cars, outstation cabs, and airport transfers—so your trip feels simple from start to finish.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-max-gray sm:mt-4 sm:text-base">
-              We combine a modern fleet, transparent pricing, and responsive
-              support so every trip feels effortless—from airport pickup to long
-              highway drives.
+              Looking for <strong>car rental in Thoothukudi</strong>? Book reliable <strong>cab service Thoothukudi</strong> and comfortable <strong>taxi Thoothukudi</strong> for local travel and intercity journeys.
             </p>
 
             {/* Progress bars */}

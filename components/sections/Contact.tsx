@@ -105,11 +105,11 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-md w-full mx-auto relative z-10">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-2">
-              Contact Us
-            </h2>
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-2">
+              Car Rental in Thoothukudi
+            </h1>
             <p className="text-gray-500 mb-6 text-sm font-medium">
-              Send a message and our local team will respond to help plan your adventure.
+              If you’re searching for <strong>car travels near me</strong>, reach out to Max Travels. We offer <strong>car rental Thoothukudi</strong>, <strong>cab service Thoothukudi</strong>, and <strong>taxi Thoothukudi</strong> for airport pickup, outstation trips, and local travel.
             </p>
           
             {/* Notification Banner State Feedbacks */}

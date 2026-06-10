@@ -338,7 +338,7 @@ export default function Chatbot() {
         aria-label={open ? "Close Ava chat" : "Chat with Ava"}
       >
         <Image
-          src="https://creator.nightcafe.studio/jobs/ePl9SnmrOXX3kl7XPoH1/ePl9SnmrOXX3kl7XPoH1--0--9woe1.jpg"
+          src="/assistant.png"
           alt="Ava"
           width={58}
           height={58}
@@ -357,7 +357,7 @@ export default function Chatbot() {
         <div className="ava-hd">
           <div className="ava-hd-av">
             <Image
-              src="https://creator.nightcafe.studio/jobs/ePl9SnmrOXX3kl7XPoH1/ePl9SnmrOXX3kl7XPoH1--0--9woe1.jpg"
+              src="/assistant.png"
               alt="Ava"
               width={42}
               height={42}

@@ -78,7 +78,13 @@ const nextConfig: NextConfig = {
         hostname: "cdn.shopify.com",
         port: "",
         pathname: "/**",
-      },      
+      },   
+      {
+        protocol: "https",
+        hostname: "stimg.cardekho.com",
+        port: "",
+        pathname: "/**",
+      }   
     ],
   },
 };

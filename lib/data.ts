@@ -40,56 +40,56 @@ export const marqueeItems = [
 export const services = [
   {
     icon: "car",
-    title: "Corporate car rental",
+    title: "Corporate Car Rental in Thoothukudi",
     description:
-      "Fleet solutions for business travel with flexible contracts and dedicated account support.",
+      "Reliable fleet solutions for businesses in Tuticorin and across Tamil Nadu. Flexible contracts, dedicated account support, and on-time corporate travel every trip.",
   },
   {
     icon: "taxi",
-    title: "Car rental with driver",
+    title: "Cab with Driver – Thoothukudi & Nearby",
     description:
-      "Professional chauffeurs for airport transfers, events, and executive transportation.",
+      "Experienced, verified drivers for airport transfers, weddings, and executive travel in Thoothukudi, Tirunelveli, and beyond.",
   },
   {
     icon: "sport",
-    title: "Airport transfer",
+    title: "Airport Transfer – Tuticorin Airport",
     description:
-      "On-time pickups and drop-offs with real-time flight tracking and meet-and-greet options.",
+      "Punctual pickups and drop-offs at Thoothukudi Airport with real-time flight tracking and courteous meet-and-greet service.",
   },
   {
     icon: "insurance",
-    title: "Fleet leasing",
+    title: "Outstation Cab from Thoothukudi",
     description:
-      "Long-term leasing packages tailored to your mileage, maintenance, and budget needs.",
+      "Comfortable outstation taxi packages from Tuticorin to Chennai, Madurai, Coimbatore, Tirunelveli, and all major Tamil Nadu destinations.",
   },
 ] as const;
 
 export const processSteps = [
   {
-    title: "Choose A Car",
+    title: "Choose Your Car",
     description:
-      "Browse categories and compare vehicles by price, features, and availability.",
+      "Pick from sedans, MUVs, and Tempo Travellers suited for local Thoothukudi trips or long outstation routes across Tamil Nadu.",
     image:
       "https://cdn.shopify.com/s/files/1/0843/2612/1760/files/Gemini_Generated_Image_urvlgpurvlgpurvl.jpg?v=1746792608",
   },
   {
-    title: "Come In Contact",
+    title: "Book in Minutes",
     description:
-      "Confirm your dates, pickup location, and add-ons with our booking team.",
+      "Call or WhatsApp us instantly to confirm your cab in Thoothukudi. Fast booking, transparent pricing, zero hidden charges.",
     image:
       "https://images.unsplash.com/photo-1719937206224-602b1db4d883?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Pick-Up Locations",
+    title: "Pickup Across Thoothukudi",
     description:
-      "Collect your vehicle at the nearest branch or request doorstep delivery.",
+      "We pick you up anywhere in Tuticorin — home, office, hospital, or Thoothukudi Railway Station. Doorstep cab service available.",
     image:
       "https://images.unsplash.com/photo-1620691537282-83d320806644?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Enjoy Driving",
+    title: "Ride Safe, Ride Comfortable",
     description:
-      "Hit the road with full insurance options and 24/7 roadside assistance.",
+      "Travel with full insurance coverage and 24/7 roadside assistance on every Max Travels cab across Tamil Nadu.",
     image:
       "https://images.unsplash.com/photo-1541570213932-8cd806e3f8f6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -97,19 +97,19 @@ export const processSteps = [
 
 export const whyChoose = [
   {
-    title: "Easy & Fast Booking",
+    title: "Best Cab Service in Thoothukudi",
     description:
-      "Reserve online in minutes with instant confirmation and transparent pricing.",
+      "Rated #1 car travels in Tuticorin for on-time pickup, clean vehicles, and lowest outstation fares across Tamil Nadu.",
   },
   {
-    title: "Many Pickup Locations",
+    title: "Multiple Pickup Points in Tuticorin",
     description:
-      "Nationwide branches and partner hubs so you can start your trip nearby.",
+      "We serve all areas of Thoothukudi — Tiruchendur Road, Millerpuram, Bryant Nagar, VOC Port area, and surrounding towns.",
   },
   {
-    title: "Customer Satisfaction",
+    title: "Trusted by Thousands in Tamil Nadu",
     description:
-      "Rated highly for clean vehicles, friendly staff, and flexible return policies.",
+      "Hundreds of 5-star reviews from local customers. Transparent billing, professional drivers, and flexible cancellation for every booking.",
   },
 ] as const;
 
@@ -158,7 +158,7 @@ export const cars: Car[] = [
     brand: "Maruti",
     name: "Swift Dzire",
     price: 2500,
-    originalPrice: 2700,   // +200
+    originalPrice: 2700,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -174,7 +174,7 @@ export const cars: Car[] = [
     brand: "Hyundai",
     name: "Hyundai Aura",
     price: 2800,
-    originalPrice: 3050,   // +250
+    originalPrice: 3050,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -190,7 +190,7 @@ export const cars: Car[] = [
     brand: "Toyota",
     name: "Toyota Etios",
     price: 2500,
-    originalPrice: 2700,   // +200
+    originalPrice: 2700,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -208,7 +208,7 @@ export const cars: Car[] = [
     brand: "Toyota",
     name: "Innova Crysta",
     price: 4500,
-    originalPrice: 4750,   // +250
+    originalPrice: 4750,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -224,7 +224,7 @@ export const cars: Car[] = [
     brand: "Toyota",
     name: "Innova",
     price: 4000,
-    originalPrice: 4200,   // +200
+    originalPrice: 4200,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -234,13 +234,13 @@ export const cars: Car[] = [
     type: "MUV",
     ac: true,
     image:
-      "https://i.pinimg.com/1200x/3a/1f/cb/3a1fcb1a65e2d38a9a34fbb76cec1e39.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Toyota-Innova/1174/1544523709266/front-left-side-47.jpg",
   },
   {
     brand: "Kia",
     name: "Carens",
     price: 3500,
-    originalPrice: 3700,   // +200
+    originalPrice: 3700,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -256,7 +256,7 @@ export const cars: Car[] = [
     brand: "Maruti",
     name: "Ertiga  (AC)",
     price: 3800,
-    originalPrice: 3950,   // +150
+    originalPrice: 3950,
     hours: "12 hr",
     km: 80,
     extraPerKm: 13,
@@ -274,7 +274,7 @@ export const cars: Car[] = [
     brand: "Force",
     name: "Tempo Traveller (AC)",
     price: 6000,
-    originalPrice: 6200,   // +200
+    originalPrice: 6200,
     hours: "12 hr",
     km: 80,
     extraPerKm: 25,
@@ -306,7 +306,7 @@ export const cars: Car[] = [
     brand: "Force",
     name: "Tempo Traveller (Non-AC)",
     price: 5500,
-    originalPrice: 5700,   // +200
+    originalPrice: 5700,
     hours: "12 hr",
     km: 80,
     extraPerKm: 25,
@@ -325,7 +325,7 @@ export const pricingPlans = [
     name: "Skyline Taxi",
     price: 199,
     description:
-      "Ideal for short city trips with predictable rates and quick dispatch.",
+      "Perfect for short city rides within Thoothukudi. Affordable metered fares with quick dispatch anywhere in Tuticorin.",
     icon: "taxi",
     features: [
       { label: "Initial charge", value: "₹40" },
@@ -338,7 +338,7 @@ export const pricingPlans = [
     name: "Urban Cabs",
     price: 499,
     description:
-      "Balanced plan for daily commuters with priority booking windows.",
+      "Ideal for daily commuters and outstation trips from Thoothukudi to Tirunelveli, Madurai, and nearby Tamil Nadu cities.",
     icon: "MUV",
     features: [
       { label: "Initial charge", value: "₹50" },
@@ -351,7 +351,7 @@ export const pricingPlans = [
     name: "TurboTaxi",
     price: 999,
     description:
-      "Premium tier with luxury vehicles and dedicated customer support.",
+      "Premium cab service in Thoothukudi with luxury vehicles, professional drivers, and dedicated 24/7 customer support for corporate and VIP travel.",
     icon: "jeep",
     features: [
       { label: "Initial charge", value: "₹70" },
@@ -440,29 +440,29 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "How old do I need to be to rent a car?",
+    question: "Which areas in Thoothukudi do you serve?",
     answer:
-      "Drivers must be at least 21 years old. Drivers under 25 may incur a young-driver surcharge depending on vehicle class.",
+      "Max Travels covers all of Thoothukudi district including Tuticorin city, Tiruchendur, Kovilpatti, Ettayapuram, VOC Port area, Millerpuram, and all nearby towns. We also operate outstation cabs to Tirunelveli, Madurai, Chennai, and all major Tamil Nadu cities.",
   },
   {
-    question: "What documents do I need to rent a car?",
+    question: "What documents do I need to book a cab in Thoothukudi?",
     answer:
-      "A valid driver's license, government-issued ID, and a credit or debit card in the renter's name are required at pickup.",
+      "A valid Aadhaar card or government-issued ID is sufficient for booking. For self-drive rentals, a valid Indian driver's licence is required at the time of pickup.",
   },
   {
-    question: "What types of vehicles are available for rent?",
+    question: "Do you offer outstation taxi service from Thoothukudi?",
     answer:
-      "We offer sedans, MUVs, luxury cars, vans, and electric vehicles. Availability varies by location and season.",
+      "Yes! We provide outstation cab service from Thoothukudi to all Tamil Nadu destinations — Madurai, Chennai, Coimbatore, Tirunelveli, Kanyakumari, Rameswaram, and more. One-way and round-trip packages available.",
   },
   {
-    question: "Can I rent a car with a debit card?",
+    question: "Can I book a cab for Thoothukudi Airport transfer?",
     answer:
-      "Yes, at participating locations. A security hold may apply and additional verification steps can be required.",
+      "Absolutely. We specialise in Thoothukudi Airport (VOC Airport) pickups and drops. Our drivers track your flight in real time so you never have to wait.",
   },
   {
-    question: "What is your fuel policy?",
+    question: "What is your fuel policy for outstation trips?",
     answer:
-      "Most rentals use a full-to-full policy. Return the vehicle with the same fuel level to avoid refueling charges.",
+      "All our outstation packages from Thoothukudi are inclusive of fuel. The quoted price covers fuel charges — no surprise billing at the end of your trip.",
   },
 ] as const;
 
@@ -516,27 +516,27 @@ export const teamMembers = [
 
 export const blogPosts = [
   {
-    title: "Documents required for car rental services",
+    title: "Documents Required to Book a Cab in Thoothukudi",
     excerpt:
-      "Know which IDs and payment methods to bring for a faster checkout experience.",
+      "Booking a car travels service in Tuticorin is fast and simple. Here's exactly which ID proofs and payment methods you need for same-day cab booking in Thoothukudi.",
     date: { day: "10", month: "Nov" },
     tag: "Car Showcase",
     image:
       "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
   },
   {
-    title: "Effective car rental blog topics for your fleet",
+    title: "Best Outstation Cab Routes from Thoothukudi in Tamil Nadu",
     excerpt:
-      "Content ideas that help customers compare plans and choose the right vehicle.",
+      "Planning a trip from Thoothukudi? Explore the most popular outstation taxi routes to Madurai, Kanyakumari, Chennai, and Tirunelveli with Max Travels — the most trusted car travels in Tuticorin.",
     date: { day: "12", month: "Nov" },
     tag: "Guides",
     image:
       "https://images.unsplash.com/photo-1532931899774-fbd4de0008fb?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Rental cost of sport and luxury cars explained",
+    title: "Sedan vs Innova: Which Cab is Right for Your Thoothukudi Trip?",
     excerpt:
-      "How daily rates, deposits, and insurance affect premium vehicle pricing.",
+      "Confused between a sedan and an Innova Crysta for your next trip from Thoothukudi? Compare seating, comfort, and per-km rates to choose the best car travels option for your family or group.",
     date: { day: "15", month: "Nov" },
     tag: "Pricing",
     image:

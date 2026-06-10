@@ -37,7 +37,7 @@ export function Counter() {
           <div className="relative grid grid-cols-2 gap-4">
             <div className="relative aspect-[3/4] overflow-hidden rounded-max">
               <Image
-                src="https://i.pinimg.com/736x/71/44/da/7144da40e336d95180ef273e8cc9d75d.jpg"
+                src="https://i.pinimg.com/736x/fb/3a/92/fb3a9277937b6f2ebd0174b4c7c302c1.jpg"
                 alt="Car on road"
                 fill
                 className="object-cover"
