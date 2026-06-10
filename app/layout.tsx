@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/max-travels-logo-cropped.png",
-    shortcut: "/max-travels-logo-cropped.png",
-    apple: "/max-travels-logo-cropped.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
