@@ -1033,7 +1033,7 @@ export default function BookingPage() {
             {/* BG image */}
             <Image
               src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-              alt=""
+              alt="Max Travels Logo"
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               style={{ objectFit: "cover", objectPosition: "center" }}

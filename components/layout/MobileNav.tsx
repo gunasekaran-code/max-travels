@@ -50,13 +50,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         <div className="flex items-center justify-between px-5 py-5 border-b border-neutral-100 dark:border-neutral-800">
           <span className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-max-base/10">
-              <Image
-                src="/max-travels-logo.png"
-                alt=""
-                width={28}
-                height={28}
-                className="object-contain"
-              />
+                <Image
+                  src="/max-travels-logo.png"
+                  alt="Max Travels logo"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
             </span>
             <span className="text-neutral-900 dark:text-white">
               Max<span className="text-max-base">Travels</span>

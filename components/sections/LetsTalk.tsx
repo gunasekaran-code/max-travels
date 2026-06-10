@@ -6,7 +6,7 @@ export function LetsTalk() {
     <section className="relative py-20 md:py-24">
       <Image
         src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1920&q=80"
-        alt=""
+        alt="Max Travels Logo"
         fill
         className="object-cover"
       />

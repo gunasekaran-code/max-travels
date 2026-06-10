@@ -39,7 +39,7 @@ export function Team() {
                     </p>
                   </div>
                   <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                    <Image src={m.thumb} alt="" fill className="object-cover" />
+                    <Image src={m.thumb} alt="Max Travels Logo" fill className="object-cover" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold">{m.name}</h4>

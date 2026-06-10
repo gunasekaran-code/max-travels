@@ -89,7 +89,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-max-base/10">
               <Image
                 src="/max-travels-logo.png"
-                alt=""
+                alt="Max Travels Logo"
                 width={28}
                 height={28}
                 className="object-contain"
