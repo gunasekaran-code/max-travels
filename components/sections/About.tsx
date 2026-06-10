@@ -16,7 +16,7 @@ export function About() {
             {/* Main image */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:rounded-max">
               <Image
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80"
+                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Professional driver with rental car"
                 fill
                 className="object-cover"
@@ -34,7 +34,7 @@ export function About() {
             >
               <div className="relative h-28 w-24 sm:h-36 sm:w-28 md:h-44 md:w-36">
                 <Image
-                  src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&q=80"
+                  src="https://i.pinimg.com/1200x/39/8c/3b/398c3bd8ab7d826b4e0fbd5e8aa6fa8a.jpg"
                   alt="Car interior"
                   fill
                   className="object-cover"

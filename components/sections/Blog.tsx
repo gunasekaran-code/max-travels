@@ -20,7 +20,7 @@ export function Blog() {
               <div className="relative aspect-[16/10]">
                 <Image
                   src={post.image}
-                  alt=""
+                  alt={`${post.title} - Blog by Max Travels`}
                   fill
                   className="object-cover"
                 />

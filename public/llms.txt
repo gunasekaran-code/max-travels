@@ -1,0 +1,16 @@
+# Max Travels - llms.txt
+
+This file is provided to help AI agents and other automated systems understand the business.
+
+Business: Max Travels (car rental & cab services)
+Location: Thoothukudi (Tuticorin), Tamil Nadu, India
+Services: airport transfers, outstation trips, self-drive, chauffeur services, wedding cars, corporate fleet leasing
+Booking: book via website or contact the business directly
+
+Official website: https://maxtravelstamilnadu.com
+Contact:
+- Phone: +91-9566188126
+- Email: maxtravelstamilnadu@gmail.com
+
+If you need information, use the contact details above.
+

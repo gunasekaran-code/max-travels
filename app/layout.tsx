@@ -50,6 +50,44 @@ const BUSINESS = {
 // Rich Structured Data helpers
 // ─────────────────────────────────────────────
 
+/** Organization schema (required by some Identity/Audit tools) */
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE.url}/#organization`,
+  name: BUSINESS.name,
+  legalName: BUSINESS.legalName,
+  url: SITE.url,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE.url}/max-travels-logo.png`,
+    width: 512,
+    height: 512,
+  },
+  image: `${SITE.url}/max-travels-logo.png`,
+  telephone: BUSINESS.phone,
+  email: BUSINESS.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BUSINESS.address.street,
+    addressLocality: BUSINESS.address.locality,
+    addressRegion: BUSINESS.address.region,
+    postalCode: BUSINESS.address.postalCode,
+    addressCountry: BUSINESS.address.country,
+  },
+  sameAs: [
+    BUSINESS.socialProfiles.facebook,
+    BUSINESS.socialProfiles.instagram,
+    BUSINESS.socialProfiles.twitter,
+  ],
+  areaServed: [
+    { "@type": "City", name: "Thoothukudi", alternateName: "Tuticorin" },
+    { "@type": "City", name: "Tirunelveli" },
+    { "@type": "City", name: "Madurai" },
+    { "@type": "State", name: "Tamil Nadu" },
+  ],
+};
+
 /** LocalBusiness + CarRental schema */
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -506,8 +544,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
 
-        {/* ── Canonical (Next.js also injects this via alternates, belt-and-braces) ── */}
-        <link rel="canonical" href={SITE.url} />
+
 
         {/* ── PWA manifest ── */}
         <link rel="manifest" href="/site.webmanifest" />
@@ -518,11 +555,18 @@ export default function RootLayout({
             parse each independently — do NOT merge into one block.
         ─────────────────────────────────────────────────────── */}
 
-        {/* 1. LocalBusiness + CarRental */}
+        {/* 1. Organization (Identity schema) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+
+        {/* 2. LocalBusiness + CarRental */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+
 
         {/* 2. FAQ — enables Google FAQ rich results + AI answer boxes */}
         <script

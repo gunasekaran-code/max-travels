@@ -34,7 +34,7 @@ export function HeroSlider() {
               <div className="relative h-screen min-h-[100svh]">
                 <Image
                   src={slide.image}
-                  alt=""
+                  alt={`${slide.title} - ${slide.highlight} (Max Travels)`}
                   fill
                   priority={slide.id === 1}
                   className="object-cover"

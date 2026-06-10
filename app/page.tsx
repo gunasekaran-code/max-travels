@@ -18,7 +18,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Car Rental Services in Thoothukudi | Max Travels – Affordable to Luxury",
   description:
-    "Max Travels offers car rentals for every budget — from economy hatchbacks to luxury sedans. Airport transfers, outstation trips, self-drive & chauffeur services. Easy booking, best rates.",
+    "Max Travels offers car rentals for every budget — economy hatchbacks to luxury sedans. Airport transfers, outstation trips, self-drive & chauffeur. Easy booking.",
   keywords: [
     // Budget & economy
     "affordable car rental",
