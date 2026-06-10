@@ -16,24 +16,40 @@ import { Blog } from "@/components/sections/Blog";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Premium Car Rental Services | Max Travels",
+  title: "Car Rental Services in Thoothukudi | Max Travels – Affordable to Luxury",
   description:
-    "Book luxury and premium cars for any occasion. Airport transfers, self-drive rentals, and chauffeur services with Max Travels. Best rates guaranteed.",
+    "Max Travels offers car rentals for every budget — from economy hatchbacks to luxury sedans. Airport transfers, outstation trips, self-drive & chauffeur services. Easy booking, best rates.",
   keywords: [
-    "car rental",
-    "luxury cars",
-    "airport transfer",
-    "self-drive",
-    "chauffeur",
-    "premium car rental",
-    "vehicle booking",
+    // Budget & economy
+    "affordable car rental",
+    "cheap car hire",
+    "economy car rental",
+    "budget car rental Thoothukudi",
+    // Mid-range
+    "car rental Thoothukudi",
+    "cab booking Thoothukudi",
+    "outstation car rental",
+    "monthly car rental",
+    // Premium
+    "luxury car rental",
+    "premium car hire",
+    "chauffeur service Thoothukudi",
+    // Service types
+    "airport transfer Thoothukudi",
+    "self-drive car rental",
+    "corporate car rental",
+    "wedding car rental",
+    "one way cab Thoothukudi",
+    // Brand
+    "Max Travels",
+    "Max Travels car rental",
   ],
   openGraph: {
-    title: "Premium Car Rental Services | Max Travels",
+    title: "Car Rental for Every Budget | Max Travels Thoothukudi",
     description:
-      "Book luxury and premium cars for any occasion. Airport transfers, self-drive rentals, and chauffeur services.",
+      "Hatchbacks to luxury sedans — Max Travels has the right car at the right price. Airport pickups, outstation trips, self-drive & chauffeur services. Book now!",
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",         
     url: SITE.url,
     siteName: SITE.name,
     images: [
@@ -41,7 +57,7 @@ export const metadata: Metadata = {
         url: `${SITE.url}/max-travels-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Max Travels - Premium Car Rental",
+        alt: "Max Travels - Car Rental Thoothukudi | Economy to Luxury",
       },
     ],
   },
