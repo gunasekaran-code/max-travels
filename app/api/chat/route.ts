@@ -1,9 +1,4 @@
 import { NextRequest } from "next/server";
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY!,
-});
 
 type ChatMessage = {
   role?: string;
@@ -14,6 +9,12 @@ export const runtime = 'edge';
 
 export async function POST(request: NextRequest) {
   try {
+    // ✅ 1. Dynamically import and initialize the SDK inside the handler
+    const { GoogleGenAI } = await import("@google/genai");
+    const ai = new GoogleGenAI({
+      apiKey: process.env.GEMINI_API_KEY!,
+    });
+
     const body = await request.json();
     const messages: ChatMessage[] = body.messages ?? [];
 
@@ -22,6 +23,7 @@ export async function POST(request: NextRequest) {
       parts: [{ text: msg.content ?? "" }],
     }));
 
+    // ✅ 2. Call the API using the locally initialized instance
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: formattedContents,
@@ -39,7 +41,6 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Gemini API Error:", error);
 
-    // Keep error as JSON or change to plain text depending on your frontend error handling
     return new Response("Failed to generate response", { 
       status: 500,
       headers: { "Content-Type": "text/plain" }
