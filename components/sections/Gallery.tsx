@@ -7,65 +7,63 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoplayPlugin from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
-// ─── Data with Unsplash images ────────────────────────────────────────────────
+// ─── Curated Tamil Nadu & Kerala Travel Data ──────────────────────────────────
 
 const destinations = [
   {
     id: 1,
-    title: "Lake Braies",
-    country: "Italy",
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900&q=85",
+    title: "Munnar Tea Gardens",
+    state: "Kerala",
+    image: "https://i.pinimg.com/1200x/ae/e5/70/aee57058bc482790095c587ed2ff40a5.jpg",
   },
   {
     id: 2,
-    title: "Dubai Skyline",
-    country: "UAE",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=85",
+    title: "Madurai Meenakshi Temple",
+    state: "Tamil Nadu",
+    image: "https://i.pinimg.com/1200x/98/1a/b4/981ab40a84d6c0ca2df596a1b993db38.jpg",
   },
   {
     id: 3,
-    title: "Big Ben",
-    country: "United Kingdom",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=85",
+    title: "Alleppey Houseboats",
+    state: "Kerala",
+    image: "https://i.pinimg.com/1200x/24/58/b1/2458b132c302633e461e6b8f97dde800.jpg",
   },
   {
     id: 4,
-    title: "Brandenburg Gate",
-    country: "Germany",
-    image: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=900&q=85",
+    title: "Ooty Botanical Hills",
+    state: "Tamil Nadu",
+    image: "https://i.pinimg.com/736x/b1/e0/3d/b1e03dbe3e1f783c1e14bebfcc85f985.jpg",
   },
   {
     id: 5,
-    title: "Colosseum",
-    country: "Italy",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=85",
+    title: "Varkala Cliff Beach",
+    state: "Kerala",
+    image: "https://i.pinimg.com/1200x/d9/8f/4a/d98f4a6507060d7324f25e2ecfae9d25.jpg",
   },
   {
     id: 6,
-    title: "Lisbon Coast",
-    country: "Portugal",
-    image: "https://images.unsplash.com/photo-1601399470081-29ab3942fd8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Rameshwaram Pamban Bridge",
+    state: "Tamil Nadu",
+    image: "https://i.pinimg.com/736x/f2/c3/72/f2c3724a0788bfc3bacd1b945d3d0f32.jpg",
   },
   {
     id: 7,
-    title: "Santorini",
-    country: "Greece",
-    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=900&q=85",
+    title: "Wayanad Western Ghats",
+    state: "Kerala",
+    image: "https://i.pinimg.com/1200x/aa/6b/cc/aa6bcc85ecf31d8c9ece57857086c78e.jpg",
   },
   {
     id: 8,
-    title: "Bali Rice Fields",
-    country: "Indonesia",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=85",
+    title: "Mahabalipuram Shore Temple",
+    state: "Tamil Nadu",
+    image: "https://i.pinimg.com/1200x/fb/5a/67/fb5a67e5656e8999b03dc3a29c69968a.jpg",
   },
 ];
 
-const filterTabs = [
-  "All","Italy","Dubai","London","Berlin","Rome","Lisbon","India","China","Japan",
-];
+// Cleaned up tabs specifically for South India Exploration
+const filterTabs = ["All", "Tamil Nadu", "Kerala"];
 
 // ─── Per-slide transform config ───────────────────────────────────────────────
-// Positions relative to active center (index offset: -2, -1, 0, +1, +2)
 const OFFSETS: Record<number, { x: string; scale: number; rotate: number; z: number; opacity: number }> = {
   [-2]: { x: "-185%", scale: 0.62, rotate: -14, z: 1, opacity: 0.7 },
   [-1]: { x: "-95%",  scale: 0.80, rotate: -7,  z: 2, opacity: 0.85 },
@@ -80,7 +78,7 @@ function GalleryCard({
   offsetIndex,
 }: {
   destination: (typeof destinations)[0];
-  offsetIndex: number; // -2 to +2
+  offsetIndex: number;
 }) {
   const cfg = OFFSETS[Math.max(-2, Math.min(2, offsetIndex))] ?? OFFSETS[2];
   const isActive = offsetIndex === 0;
@@ -132,12 +130,12 @@ function GalleryCard({
           }}
         />
 
-        {/* Country pill — only on active */}
+        {/* State pill — only on active */}
         {isActive && (
           <div className="absolute top-5 left-5 flex items-center gap-1.5 bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 border border-white/30">
             <MapPin className="w-3 h-3 text-white" />
             <span className="text-white text-xs font-semibold tracking-wide">
-              {destination.country}
+              {destination.state}
             </span>
           </div>
         )}
@@ -146,7 +144,7 @@ function GalleryCard({
         {isActive && (
           <div className="absolute bottom-0 left-0 right-0 p-6 pb-7">
             <p className="text-white/60 text-xs font-semibold tracking-widest uppercase mb-1">
-              {destination.country}
+              {destination.state}
             </p>
             <h3
               className="text-white font-extrabold leading-tight"
@@ -175,16 +173,11 @@ export default function GalleryPage() {
     [autoplay.current]
   );
 
-  const filtered =
+  // Filter criteria logic adjusted for India states mapping
+  const visibleList =
     activeTab === "All"
       ? destinations
-      : destinations.filter(
-          (d) =>
-            d.country.toLowerCase().includes(activeTab.toLowerCase()) ||
-            d.title.toLowerCase().includes(activeTab.toLowerCase())
-        );
-
-  const visibleList = filtered.length > 0 ? filtered : destinations;
+      : destinations.filter((d) => d.state.toLowerCase() === activeTab.toLowerCase());
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -219,16 +212,16 @@ export default function GalleryPage() {
   return (
     <section
       className="relative w-full bg-white overflow-hidden py-12 md:py-20"
-      aria-label="Travel destination gallery"
+      aria-label="South India travel destination gallery"
     >
-      {/* Soft white glow behind cards */}
+      {/* Soft color glow behind cards */}
       <div
         className="pointer-events-none absolute left-1/2 -translate-x-1/2 rounded-full blur-3xl"
         style={{
           top: "15%",
           width: "60%",
           height: "55%",
-          background: "radial-gradient(ellipse, rgba(180,200,255,0.22) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(4,120,87,0.15) 0%, transparent 70%)",
         }}
       />
 
@@ -240,7 +233,7 @@ export default function GalleryPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Explore the World
+          Discover South India
         </motion.p>
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#03053D] leading-tight"
@@ -248,7 +241,7 @@ export default function GalleryPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Top Destinations
+          Tamil Nadu & Kerala
         </motion.h2>
       </div>
 
@@ -260,7 +253,7 @@ export default function GalleryPage() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={[
-                "flex-shrink-0 px-5 py-2 rounded-full text-sm font-semibold border transition-colors duration-200",
+                "flex-shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold border transition-colors duration-200",
                 "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#03053D]",
                 activeTab === tab
                   ? "bg-[#03053D] text-white border-[#03053D]"
@@ -286,9 +279,8 @@ export default function GalleryPage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
-            {/* Embla is used only for gesture/loop/autoplay logic; visual layout is CSS+Framer */}
             <div ref={emblaRef} className="overflow-hidden w-full">
-              {/* Hidden real slides for Embla snap logic */}
+              {/* Hidden real slides for Embla tracking */}
               <div className="flex">
                 {visibleList.map((dest) => (
                   <div
@@ -300,19 +292,19 @@ export default function GalleryPage() {
               </div>
             </div>
 
-            {/* Visual coverflow — absolutely positioned fan */}
+            {/* Visual Coverflow Fan */}
             <div
               className="relative w-full mx-auto overflow-visible"
               style={{ height: `clamp(380px, 55vw, 630px)` }}
             >
               {visibleList.map((dest, i) => {
                 const offset = i - selectedIndex;
-                // wrap around for loop
                 const total = visibleList.length;
                 let wrappedOffset = offset;
+                
                 if (wrappedOffset > total / 2)  wrappedOffset -= total;
                 if (wrappedOffset < -total / 2) wrappedOffset += total;
-                // only render -2 to +2
+                
                 if (Math.abs(wrappedOffset) > 2) return null;
                 return (
                   <GalleryCard
@@ -338,7 +330,7 @@ export default function GalleryPage() {
             <ChevronLeft className="w-6 h-6" />
           </motion.button>
 
-          {/* Dots */}
+          {/* Dots Indicator */}
           <div className="flex gap-2 items-center" aria-hidden>
             {visibleList.map((_, i) => (
               <motion.button
@@ -371,5 +363,4 @@ export default function GalleryPage() {
   );
 }
 
-// Named export so `import { Gallery }` works too
 export { GalleryPage as Gallery };
