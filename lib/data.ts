@@ -468,49 +468,39 @@ export const faqs = [
 
 export const teamMembers = [
   {
-    name: "Olivia Grace",
-    role: "Sr. Driver",
-    years: "05",
-    thumb:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+    name: "Leadership Experience",
+    role: "Owner & Founder",
+    years: "15+",
+    thumb: "/assets/images/image1.png",
+    image: "/assets/images/image1.png",
   },
   {
-    name: "Olivia Smith",
-    role: "Premium Driver",
-    years: "08",
-    thumb:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    name: "Murugan ",
+    role: "Driver",
+    years: "10",
+    thumb: "/assets/images/image2.png",
+    image: "/assets/images/image2.png",
   },
   {
-    name: "James Olivia",
-    role: "Jr. Driver",
-    years: "04",
-    thumb:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80",
+    name: "Siva sakthi",
+    role: "Driver",
+    years: "10",
+    thumb: "/assets/images/image3.png",
+    image: "/assets/images/image3.png",
   },
   {
-    name: "Jason Ray",
-    role: "Sr. Driver",
+    name: "Chinnadurai",
+    role: "Driver",
     years: "07",
-    thumb:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80",
-    image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80",
+    thumb: "/assets/images/image4.png",
+    image: "/assets/images/image4.png",
   },
   {
-    name: "James Vince",
-    role: "Service Coordinator",
-    years: "03",
-    thumb:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&q=80",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80",
+    name: "Tamilarasan",
+    role: "Driver",
+    years: "07",
+    thumb: "/assets/images/image5.png",
+    image: "/assets/images/image5.png",
   },
 ] as const;
 
