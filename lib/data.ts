@@ -496,7 +496,7 @@ export const teamMembers = [
     image: "/assets/images/image4.png",
   },
   {
-    name: "Tamilarasan",
+    name: "Tamil",
     role: "Driver",
     years: "07",
     thumb: "/assets/images/image5.png",

@@ -5,6 +5,7 @@ import { SITE } from "@/lib/constants";
 import "./globals.css";
 import Chatbot from "@/components/chatbot";
 
+
 // ─────────────────────────────────────────────
 // Font
 // ─────────────────────────────────────────────
@@ -653,9 +654,9 @@ export default function RootLayout({
           <span itemProp="openingHours">Mo-Su 00:00-24:00</span>
           <span itemProp="priceRange">₹₹</span>
         </div>
-
         <SiteShell>{children}</SiteShell>
         <Chatbot />
+
       </body>
     </html>
   );

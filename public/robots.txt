@@ -1,18 +1,14 @@
-# Max Travels - Robots Configuration
-
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /dashboard
-Disallow: /private
-Disallow: /api/internal
-Disallow: /*.json
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/internal/
 Disallow: /.env
 Disallow: /.git
-Disallow: /node_modules
-Allow: /api/public
+Disallow: /node_modules/
+Allow: /api/public/
 Crawl-delay: 1
-
 Sitemap: https://maxtravelstamilnadu.com/sitemap.xml
 
 User-agent: Googlebot

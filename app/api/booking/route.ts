@@ -45,14 +45,14 @@ export async function POST(request: NextRequest) {
 
     // Get WhatsApp credentials from environment
     const phoneNumberId = process.env.WHATSAPP_PHONE_NUMBER_ID;
-    const accessToken   = process.env.WHATSAPP_ACCESS_TOKEN;
+    const accessToken = process.env.WHATSAPP_ACCESS_TOKEN;
     const recipientPhone = process.env.WHATSAPP_RECIPIENT_PHONE;
 
     if (!phoneNumberId || !accessToken || !recipientPhone) {
       console.error("WhatsApp credentials not configured:", {
         hasPhoneNumberId: !!phoneNumberId,
-        hasAccessToken:   !!accessToken,
-        hasRecipient:     !!recipientPhone,
+        hasAccessToken: !!accessToken,
+        hasRecipient: !!recipientPhone,
       });
       return NextResponse.json(
         { error: "Server configuration error: missing WhatsApp credentials" },
@@ -81,6 +81,12 @@ export async function POST(request: NextRequest) {
     // ✅ FIXED: Use graph.facebook.com (not graph.instagram.com)
     const whatsappUrl = `https://graph.facebook.com/v18.0/${phoneNumberId}/messages`;
 
+    console.log("Sending WhatsApp message:", {
+      phoneNumberId,
+      recipientPhone,
+      url: whatsappUrl,
+    });
+
     const whatsappResponse = await fetch(whatsappUrl, {
       method: "POST",
       headers: {
@@ -97,6 +103,12 @@ export async function POST(request: NextRequest) {
     });
 
     const whatsappData = await whatsappResponse.json();
+
+    console.log("WhatsApp Response Status:", whatsappResponse.status);
+    console.log(
+      "WhatsApp Response:",
+      JSON.stringify(whatsappData, null, 2)
+    );
 
     if (!whatsappResponse.ok) {
       // Surface the real WhatsApp error to the server log
@@ -134,7 +146,7 @@ export async function GET() {
 
   const checks = {
     WHATSAPP_PHONE_NUMBER_ID: !!process.env.WHATSAPP_PHONE_NUMBER_ID,
-    WHATSAPP_ACCESS_TOKEN:    !!process.env.WHATSAPP_ACCESS_TOKEN,
+    WHATSAPP_ACCESS_TOKEN: !!process.env.WHATSAPP_ACCESS_TOKEN,
     WHATSAPP_RECIPIENT_PHONE: !!process.env.WHATSAPP_RECIPIENT_PHONE,
   };
 
