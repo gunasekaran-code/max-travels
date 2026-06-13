@@ -5,7 +5,7 @@ import { teamMembers } from "@/lib/data";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { cn } from "@/lib/utils";
 
-export function Team() {
+export default function Teams() {
   const [active, setActive] = useState(0);
   const member = teamMembers[active];
 

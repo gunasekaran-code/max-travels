@@ -11,7 +11,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { CallBanner } from "@/components/sections/CallBanner";
 import { FAQ } from "@/components/sections/FAQ";
 import { LetsTalk } from "@/components/sections/LetsTalk";
-import { Team } from "@/components/sections/Team";
+import Teams from "@/components/sections/Team";
 import { Blog } from "@/components/sections/Blog";
 import { SITE } from "@/lib/constants";
 
@@ -81,7 +81,7 @@ export default function HomePage() {
       <CallBanner />
       <FAQ />
       <LetsTalk />
-      <Team />
+      <Teams />
       <Blog />
     </>
   );

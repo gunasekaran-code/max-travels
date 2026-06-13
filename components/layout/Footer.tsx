@@ -199,12 +199,18 @@ export function Footer() {
           <p>© {new Date().getFullYear()} {SITE.name}. All Rights Reserved.</p>
           <ul className="flex gap-6">
             <li>
-              <Link href="#terms" className="hover:text-max-base transition-colors">
+              <Link
+                href="/terms-of-service"
+                className="hover:text-max-base transition-colors"
+              >
                 Terms of Service
               </Link>
             </li>
             <li>
-              <Link href="#privacy" className="hover:text-max-base transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-max-base transition-colors"
+              >
                 Privacy policy
               </Link>
             </li>
