@@ -6,7 +6,7 @@ interface MailRequestBody {
   message?: string;
 }
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 const resendApiUrl = "https://api.resend.com/emails";
 

@@ -11,7 +11,7 @@ interface BookingData {
   notes?: string;
 }
 
-export const runtime = 'edge';
+// export const runtime = 'edge'; 
 
 export async function POST(request: NextRequest) {
   try {

@@ -7,7 +7,7 @@ import type { ContactFormData, APIResponse } from "@/lib/types";
  * Handles contact form submissions
  */
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 export async function POST(request: NextRequest): Promise<NextResponse<APIResponse>> {
   try {

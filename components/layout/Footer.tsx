@@ -7,7 +7,7 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Galleries", href: "/gallery" },
   { label: "Our Services", href: "/#services" },
-  { label: "Our Drivers", href: "/#team" },
+  { label: "Our Teams", href: "/#team" },
   { label: "Our Blog", href: "/#blog" },
   { label: "Contact Us", href: "/contact" },
 ];
