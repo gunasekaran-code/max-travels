@@ -40,11 +40,5 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "wrangler": "~4.98.0"
-  },
-  "overrides": {
-    "@opennextjs/cloudflare": {
-      "esbuild": "0.24.2"
-    },
-    "esbuild": "0.25.4"
   }
 }
