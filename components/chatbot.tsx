@@ -6,7 +6,7 @@ const INITIAL_MESSAGES: { role: "user" | "assistant" | "system"; content: string
   {
     role: "system",
     content:
-      "You are a helpful assistant for Max Travels — car bookings and travel info. Speak concisely and politely.",
+      "You are Ava, a helpful assistant for Max Travels — car bookings and travel info. Speak concisely and politely.",
   },
   {
     role: "assistant",
@@ -20,17 +20,20 @@ export default function Chatbot() {
   const [messages, setMessages] = useState(INITIAL_MESSAGES);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null); // ✅ WhatsApp button URL
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  // Auto-open after 10 seconds
   useEffect(() => {
     const t = setTimeout(() => setOpen(true), 10000);
     return () => clearTimeout(t);
   }, []);
 
+  // Auto-scroll to bottom
   useEffect(() => {
     const el = containerRef.current;
     if (el) el.scrollTop = el.scrollHeight;
-  }, [messages, open]);
+  }, [messages, open, whatsappUrl]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim()) return;
@@ -39,27 +42,31 @@ export default function Chatbot() {
     setMessages(next);
     setInput("");
     setLoading(true);
+    setWhatsappUrl(null); // Reset WhatsApp button on each new message
+
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next }),
       });
+
       if (!res.ok) {
         const err = await res.text();
         setMessages((m) => [...m, { role: "assistant", content: `Error: ${err}` }]);
         return;
       }
-      const contentType = res.headers.get("content-type") || "";
-      let assistantText = "";
-      if (contentType.includes("application/json")) {
-        const data = await res.json();
-        assistantText =
-          data.output?.[0]?.content?.[0]?.text || data.result || JSON.stringify(data);
-      } else {
-        assistantText = await res.text();
-      }
+
+      const data = await res.json();
+      const assistantText = data.text || "Sorry, I couldn't respond. Please try again.";
+
       setMessages((m) => [...m, { role: "assistant", content: assistantText }]);
+
+      // ✅ If booking is complete, show the WhatsApp confirm button
+      if (data.whatsappUrl) {
+        setWhatsappUrl(data.whatsappUrl);
+      }
+
     } catch (e) {
       setMessages((m) => [
         ...m,
@@ -73,6 +80,7 @@ export default function Chatbot() {
   const handleRestart = () => {
     setMessages(INITIAL_MESSAGES);
     setInput("");
+    setWhatsappUrl(null); // ✅ Clear WhatsApp button on restart
   };
 
   return (
@@ -148,16 +156,13 @@ export default function Chatbot() {
           }
         }
 
-        /* ── ULTRA-NARROW (≤300px wide) — Galaxy Fold closed, narrow devices ── */
+        /* ── ULTRA-NARROW (≤300px wide) ── */
         @media (max-width: 300px) {
           .ava-panel {
-            /* Full width minus small margin on both sides */
             left: 8px;
             right: 8px;
             width: auto;
-            /* Sit above FAB — leave room at top for website */
             bottom: 84px;
-            /* Tall enough for good UX, short enough to show website above */
             height: 420px;
             border-radius: 16px;
           }
@@ -168,25 +173,14 @@ export default function Chatbot() {
             height: 46px;
             border-width: 2px;
           }
-          /* Tighter header on tiny screens */
-          .ava-hd {
-            padding: 9px 10px;
-            gap: 7px;
-          }
-          .ava-hd-av {
-            width: 34px;
-            height: 34px;
-          }
+          .ava-hd { padding: 9px 10px; gap: 7px; }
+          .ava-hd-av { width: 34px; height: 34px; }
           .ava-hd-name { font-size: 12px; }
           .ava-hd-sub  { font-size: 10px; }
           .ava-hd-btn  { width: 26px; height: 26px; }
           .ava-hd-btn svg { width: 13px; height: 13px; }
-
-          /* Tighter messages */
           .ava-msgs { padding: 10px 10px 6px; gap: 8px; }
           .ava-bbl  { font-size: 12px; padding: 7px 10px; max-width: 88%; }
-
-          /* Tighter input */
           .ava-bar  { padding: 7px 9px; gap: 6px; }
           .ava-inp  { font-size: 12px; padding: 7px 9px; }
           .ava-inp::placeholder { font-size: 11px; }
@@ -194,7 +188,7 @@ export default function Chatbot() {
           .ava-send svg { width: 14px; height: 14px; }
         }
 
-        /* ── Shared small-phone override (≤380px but >300px) ── */
+        /* ── Small phone override (≤380px but >300px) ── */
         @media (max-width: 380px) and (min-width: 301px) {
           .ava-panel { height: 430px; }
         }
@@ -290,6 +284,28 @@ export default function Chatbot() {
           0%,80%,100% { transform: translateY(0); opacity: .45; }
           40%          { transform: translateY(-5px); opacity: 1; }
         }
+
+        /* ── WhatsApp confirm button ── */
+        .ava-wa-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: #25D366;
+          color: #fff;
+          padding: 10px 16px;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 13px;
+          text-decoration: none;
+          margin-top: 2px;
+          transition: background 0.15s, transform 0.1s;
+          border: none;
+          cursor: pointer;
+          max-width: 78%;
+        }
+        .ava-wa-btn:hover  { background: #1ebe5d; }
+        .ava-wa-btn:active { transform: scale(0.97); }
+        .ava-wa-btn svg { flex-shrink: 0; }
 
         /* ── Input bar ── */
         .ava-bar {
@@ -405,6 +421,25 @@ export default function Chatbot() {
                 <div className={`ava-bbl ${m.role}`}>{m.content}</div>
               </div>
             ))}
+
+          {/* ✅ WhatsApp confirm button — appears after booking is complete */}
+          {whatsappUrl && (
+            <div className="ava-row assistant">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ava-wa-btn"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                ✅ Confirm Booking on WhatsApp
+              </a>
+            </div>
+          )}
+
+          {/* Typing dots */}
           {loading && (
             <div className="ava-row assistant">
               <div className="ava-bbl assistant">
